@@ -353,7 +353,7 @@ export function Dashboard() {
         {showNewResearch ? (
           <div className="w-full">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl">Add New Company</h2>
+              <h2 className="text-xl">Research Details</h2>
               <Button variant="ghost" onClick={() => setShowNewResearch(false)}>
                 Cancel
               </Button>
