@@ -281,7 +281,7 @@ export function Dashboard() {
             </div>
             <Button onClick={() => setShowNewResearch(true)} className="flex items-center gap-2">
               <Plus className="w-4 h-4" />
-              Add Company
+              New Research
             </Button>
           </div>
         </div>
