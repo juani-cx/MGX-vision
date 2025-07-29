@@ -8,7 +8,7 @@ import { Progress } from "./ui/progress";
 
 interface ResearchTask {
   id: string;
-  title: string;
+  name: string;
   type: string;
   status: "processing" | "completed" | "failed";
   createdAt: string;
@@ -73,7 +73,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
             <div>
               <CardTitle className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-green-500" />
-                {task.name || task.title}
+                {task.name}
               </CardTitle>
               <CardDescription>
                 Research completed • {task.createdAt}
