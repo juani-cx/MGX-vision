@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Filter, Search, MoreHorizontal, Brain, TrendingUp, Users, Clock } from "lucide-react";
+import { Plus, Filter, Search, MoreHorizontal, Brain, TrendingUp, Users, Clock, CheckCircle, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
@@ -8,9 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { AIResearchPrompt } from "./AIResearchPrompt";
 import { ResearchResults } from "./ResearchResults";
 
-interface ResearchTask {
+interface Company {
   id: string;
-  title: string;
+  name: string;
   type: string;
   status: "processing" | "completed" | "failed";
   createdAt: string;
@@ -21,11 +21,11 @@ interface ResearchTask {
 
 export function Dashboard() {
   const [showNewResearch, setShowNewResearch] = useState(false);
-  const [selectedTask, setSelectedTask] = useState<ResearchTask | null>(null);
-  const [tasks, setTasks] = useState<ResearchTask[]>([
+  const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  const [companies, setCompanies] = useState<Company[]>([
     {
       id: "1",
-      title: "Tesla Inc. Investment Analysis",
+      name: "Tesla Inc.",
       type: "Financial Analysis",
       status: "completed",
       createdAt: "Feb 14, 2024",
@@ -82,7 +82,7 @@ export function Dashboard() {
     },
     {
       id: "2",
-      title: "Rivian Competitive Analysis",
+      name: "Rivian",
       type: "Market Research",
       status: "processing",
       createdAt: "Feb 15, 2024",
@@ -91,7 +91,7 @@ export function Dashboard() {
     },
     {
       id: "3",
-      title: "SpaceX Network Mapping",
+      name: "SpaceX",
       type: "Network Analysis",
       status: "completed",
       createdAt: "Feb 13, 2024",
@@ -114,9 +114,10 @@ export function Dashboard() {
   ]);
 
   const handleNewResearch = (prompt: string, type: string) => {
-    const newTask: ResearchTask = {
+    const companyName = prompt.split(' ')[0]; // Extract company name from prompt
+    const newCompany: Company = {
       id: Date.now().toString(),
-      title: prompt.length > 50 ? prompt.substring(0, 50) + "..." : prompt,
+      name: companyName,
       type: type.charAt(0).toUpperCase() + type.slice(1) + " Analysis",
       status: "processing",
       createdAt: new Date().toLocaleDateString(),
@@ -124,15 +125,15 @@ export function Dashboard() {
       assignee: "Current User"
     };
     
-    setTasks([newTask, ...tasks]);
+    setCompanies([newCompany, ...companies]);
     setShowNewResearch(false);
     
     // Simulate processing completion after 3 seconds
     setTimeout(() => {
-      setTasks(prev => prev.map(task => 
-        task.id === newTask.id 
-          ? { ...task, status: "completed" as const, results: { /* mock results */ } }
-          : task
+      setCompanies(prev => prev.map(company => 
+        company.id === newCompany.id 
+          ? { ...company, status: "completed" as const, results: { /* mock results */ } }
+          : company
       ));
     }, 3000);
   };
@@ -155,17 +156,41 @@ export function Dashboard() {
     }
   };
 
-  if (selectedTask) {
+  if (selectedCompany) {
     return (
       <div className="p-6">
-        <Button 
-          variant="ghost" 
-          onClick={() => setSelectedTask(null)}
-          className="mb-4"
-        >
-          ← Back to Dashboard
-        </Button>
-        <ResearchResults task={selectedTask} />
+        <div className="flex items-center justify-between mb-4">
+          <Button 
+            variant="ghost" 
+            onClick={() => setSelectedCompany(null)}
+          >
+            ← Back to Dashboard
+          </Button>
+          <Badge variant="secondary">{selectedCompany.type}</Badge>
+        </div>
+        
+        <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-2">
+            <CheckCircle className="w-5 h-5 text-green-500" />
+            <h1 className="text-2xl">{selectedCompany.name}</h1>
+          </div>
+          
+          <div className="flex-1 max-w-md">
+            <div className="flex items-center gap-2 p-3 border rounded-lg bg-muted/50">
+              <Brain className="w-4 h-4 text-muted-foreground" />
+              <Input 
+                placeholder="Ask me about this client..."
+                className="border-0 bg-transparent focus-visible:ring-0 text-sm"
+              />
+              <Button size="sm" variant="ghost">
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground mt-1">AI Assistant - Ask questions about this client research</p>
+          </div>
+        </div>
+        
+        <ResearchResults task={selectedCompany} />
       </div>
     );
   }
@@ -177,7 +202,7 @@ export function Dashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl">AI Strategic Platform</h1>
-            <p className="text-muted-foreground">Investment research and network intelligence</p>
+            <p className="text-muted-foreground">Company analysis and network intelligence</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
@@ -193,13 +218,14 @@ export function Dashboard() {
             </div>
             <Button onClick={() => setShowNewResearch(true)} className="flex items-center gap-2">
               <Plus className="w-4 h-4" />
-              New Research
+              Add Company
             </Button>
           </div>
         </div>
       </div>
 
       {/* Quick Stats */}
+      {!showNewResearch && (
       <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
@@ -257,13 +283,14 @@ export function Dashboard() {
           </CardContent>
         </Card>
       </div>
+      )}
 
       {/* Main Content */}
       <div className="flex-1 p-6">
         {showNewResearch ? (
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl">New Research Task</h2>
+              <h2 className="text-xl">Add New Company</h2>
               <Button variant="ghost" onClick={() => setShowNewResearch(false)}>
                 Cancel
               </Button>
@@ -277,7 +304,7 @@ export function Dashboard() {
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-                  <Input placeholder="Search tasks..." className="pl-9 w-80" />
+                  <Input placeholder="Search companies..." className="pl-9 w-80" />
                 </div>
                 <Select>
                   <SelectTrigger className="w-40">
@@ -299,30 +326,32 @@ export function Dashboard() {
             {/* Tasks List */}
             <Card>
               <CardHeader>
-                <CardTitle>Research Tasks</CardTitle>
-                <CardDescription>Track and manage your AI-powered research</CardDescription>
+                <CardTitle>Companies</CardTitle>
+                <CardDescription>Track and manage your company research</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {tasks.map((task) => (
+                  {companies.map((company) => (
                     <div
-                      key={task.id}
+                      key={company.id}
                       className="flex items-center gap-4 p-4 border rounded-lg hover:bg-muted/50 cursor-pointer"
-                      onClick={() => task.status === "completed" && setSelectedTask(task)}
+                      onClick={() => company.status === "completed" && setSelectedCompany(company)}
                     >
                       <div className="w-2 h-8 bg-primary rounded-full"></div>
                       <div className="flex-1">
-                        <h4>{task.title}</h4>
-                        <p className="text-sm text-muted-foreground">{task.createdAt}</p>
+                        <h4>{company.name}</h4>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Badge variant="outline" className="text-xs">{company.type}</Badge>
+                          <span className="text-sm text-muted-foreground">• {company.createdAt}</span>
+                        </div>
                       </div>
-                      <Badge className={getStatusColor(task.status)}>
-                        {task.status}
+                      <Badge className={getStatusColor(company.status)}>
+                        {company.status}
                       </Badge>
-                      <Badge variant="outline">{task.type}</Badge>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">{task.assignee}</span>
-                        <Badge className={getPriorityColor(task.priority)}>
-                          {task.priority}
+                        <span className="text-sm text-muted-foreground">{company.assignee}</span>
+                        <Badge className={getPriorityColor(company.priority)}>
+                          {company.priority}
                         </Badge>
                       </div>
                       <Button variant="ghost" size="sm">

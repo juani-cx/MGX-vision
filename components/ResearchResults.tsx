@@ -55,7 +55,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-yellow-500" />
-            {task.title}
+            {task.name || task.title}
           </CardTitle>
           <CardDescription>Research in progress...</CardDescription>
         </CardHeader>
@@ -77,7 +77,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <AlertTriangle className="w-5 h-5 text-destructive" />
-            {task.title}
+            {task.name || task.title}
           </CardTitle>
           <CardDescription>Research failed</CardDescription>
         </CardHeader>
@@ -102,7 +102,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
             <div>
               <CardTitle className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-green-500" />
-                {task.title}
+                {task.name || task.title}
               </CardTitle>
               <CardDescription>
                 Research completed • {task.createdAt}
@@ -138,7 +138,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
                 <p>{results.company.headquarters}</p>
               </div>
             </div>
-            
+
             <div>
               <h4 className="mb-2">Description</h4>
               <p className="text-sm text-muted-foreground">{results.company.description}</p>
@@ -247,7 +247,7 @@ export function ResearchResults({ task }: ResearchResultsProps) {
                 </div>
                 <p className="text-sm text-muted-foreground">Investment Score</p>
               </div>
-              
+
               <div className="text-center">
                 <Badge className={`${
                   results.financialAnalysis.risk === "low" ? "bg-green-100 text-green-800" :
