@@ -66,24 +66,6 @@ export function ResearchResults({ task }: ResearchResultsProps) {
 
   return (
     <div className="p-6 space-y-6 w-full">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                {task.name}
-              </CardTitle>
-              <CardDescription>
-                Research completed • {task.createdAt}
-              </CardDescription>
-            </div>
-            <Badge variant="secondary">{task.type}</Badge>
-          </div>
-        </CardHeader>
-      </Card>
-
       {/* Company Overview */}
       {company && (
         <Card>
