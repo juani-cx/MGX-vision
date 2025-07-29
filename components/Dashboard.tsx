@@ -22,7 +22,7 @@ interface Company {
 export function Dashboard() {
   const [showNewResearch, setShowNewResearch] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
-  const [assistantCollapsed, setAssistantCollapsed] = useState(false);
+  
   const [companies, setCompanies] = useState<Company[]>([
     {
       id: "1",
@@ -185,99 +185,66 @@ export function Dashboard() {
         </div>
 
         {/* Right Sidebar - AI Assistant */}
-        <div className={`${assistantCollapsed ? 'w-12' : 'w-80'} bg-sidebar border-l border-sidebar-border flex flex-col transition-all duration-300`}>
+        <div className="w-80 bg-sidebar border-l border-sidebar-border flex flex-col">
           {/* AI Assistant Header */}
           <div className="p-6 border-b border-sidebar-border">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Brain className="w-4 h-4 text-primary-foreground" />
-                </div>
-                {!assistantCollapsed && (
-                  <div>
-                    <h3 className="text-sidebar-foreground font-medium">AI Assistant</h3>
-                    <p className="text-xs text-muted-foreground">Ask about this company</p>
-                  </div>
-                )}
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <Brain className="w-4 h-4 text-primary-foreground" />
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm"
-                onClick={() => setAssistantCollapsed(!assistantCollapsed)}
-                className="text-sidebar-foreground hover:bg-sidebar-accent"
-              >
-                {assistantCollapsed ? '→' : '←'}
+              <div>
+                <h3 className="text-sidebar-foreground font-medium">AI Assistant</h3>
+                <p className="text-xs text-muted-foreground">Ask about this company</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Chat Input */}
+          <div className="p-4 border-b border-sidebar-border">
+            <div className="flex items-center gap-2 p-3 border rounded-lg bg-input-background">
+              <Input 
+                placeholder="Ask me about this client..."
+                className="border-0 bg-transparent focus-visible:ring-0 text-sm"
+              />
+              <Button size="sm" variant="ghost">
+                <Send className="w-4 h-4" />
               </Button>
             </div>
           </div>
 
-          {!assistantCollapsed && (
-            <>
-              {/* Chat Input */}
-              <div className="p-4 border-b border-sidebar-border">
-                <div className="flex items-center gap-2 p-3 border rounded-lg bg-input-background">
-                  <Input 
-                    placeholder="Ask me about this client..."
-                    className="border-0 bg-transparent focus-visible:ring-0 text-sm"
-                  />
-                  <Button size="sm" variant="ghost">
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
+          {/* Quick Actions */}
+          <div className="p-4 space-y-2">
+            <h4 className="text-xs text-muted-foreground mb-3">Quick Actions</h4>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <TrendingUp className="w-4 h-4 mr-2" />
+              Financial Summary
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <Users className="w-4 h-4 mr-2" />
+              Network Analysis
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <Brain className="w-4 h-4 mr-2" />
+              Investment Thesis
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <CheckCircle className="w-4 h-4 mr-2" />
+              Key Metrics
+            </Button>
+          </div>
 
-              {/* Quick Actions */}
-              <div className="p-4 space-y-2">
-                <h4 className="text-xs text-muted-foreground mb-3">Quick Actions</h4>
-                <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-                  <TrendingUp className="w-4 h-4 mr-2" />
-                  Financial Summary
-                </Button>
-                <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-                  <Users className="w-4 h-4 mr-2" />
-                  Network Analysis
-                </Button>
-                <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-                  <Brain className="w-4 h-4 mr-2" />
-                  Investment Thesis
-                </Button>
-                <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Key Metrics
-                </Button>
+          {/* Chat History */}
+          <div className="flex-1 p-4">
+            <h4 className="text-xs text-muted-foreground mb-3">Recent Queries</h4>
+            <div className="space-y-2 text-sm">
+              <div className="p-2 bg-sidebar-accent rounded text-sidebar-foreground">
+                "What's Tesla's current market position?"
               </div>
-
-              {/* Chat History */}
-              <div className="flex-1 p-4">
-                <h4 className="text-xs text-muted-foreground mb-3">Recent Queries</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="p-2 bg-sidebar-accent rounded text-sidebar-foreground">
-                    "What's Tesla's current market position?"
-                  </div>
-                  <div className="p-2 bg-muted rounded text-muted-foreground">
-                    "Show me the competitive analysis"
-                  </div>
-                </div>
+              <div className="p-2 bg-muted rounded text-muted-foreground">
+                "Show me the competitive analysis"
               </div>
-            </>
-          )}
-          
-          {assistantCollapsed && (
-            <div className="flex-1 flex flex-col items-center justify-start pt-4 space-y-4">
-              <Button variant="ghost" size="sm" className="w-8 h-8 p-0" title="Financial Summary">
-                <TrendingUp className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="sm" className="w-8 h-8 p-0" title="Network Analysis">
-                <Users className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="sm" className="w-8 h-8 p-0" title="Investment Thesis">
-                <Brain className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="sm" className="w-8 h-8 p-0" title="Key Metrics">
-                <CheckCircle className="w-4 h-4" />
-              </Button>
             </div>
-          )}
+          </div>
 
           {/* Bottom Status */}
           <div className="p-4 border-t border-sidebar-border">
