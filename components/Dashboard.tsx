@@ -158,26 +158,49 @@ export function Dashboard() {
 
   if (selectedCompany) {
     return (
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <Button 
-            variant="ghost" 
-            onClick={() => setSelectedCompany(null)}
-          >
-            ← Back to Dashboard
-          </Button>
-          <Badge variant="secondary">{selectedCompany.type}</Badge>
-        </div>
-        
-        <div className="flex items-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 text-green-500" />
-            <h1 className="text-2xl">{selectedCompany.name}</h1>
+      <div className="flex h-screen">
+        {/* Main Content Area - Middle Column */}
+        <div className="flex-1 flex flex-col">
+          <div className="border-b border-border p-6">
+            <div className="flex items-center justify-between mb-4">
+              <Button 
+                variant="ghost" 
+                onClick={() => setSelectedCompany(null)}
+              >
+                ← Back to Dashboard
+              </Button>
+              <Badge variant="secondary">{selectedCompany.type}</Badge>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              <h1 className="text-2xl">{selectedCompany.name}</h1>
+            </div>
           </div>
           
-          <div className="flex-1 max-w-md">
-            <div className="flex items-center gap-2 p-3 border rounded-lg bg-muted/50">
-              <Brain className="w-4 h-4 text-muted-foreground" />
+          <div className="flex-1 overflow-auto">
+            <ResearchResults task={selectedCompany} />
+          </div>
+        </div>
+
+        {/* Right Sidebar - AI Assistant */}
+        <div className="w-64 bg-sidebar border-l border-sidebar-border flex flex-col">
+          {/* AI Assistant Header */}
+          <div className="p-6 border-b border-sidebar-border">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <Brain className="w-4 h-4 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-sidebar-foreground font-medium">AI Assistant</h3>
+                <p className="text-xs text-muted-foreground">Ask about this company</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Chat Input */}
+          <div className="p-4 border-b border-sidebar-border">
+            <div className="flex items-center gap-2 p-3 border rounded-lg bg-input-background">
               <Input 
                 placeholder="Ask me about this client..."
                 className="border-0 bg-transparent focus-visible:ring-0 text-sm"
@@ -186,11 +209,50 @@ export function Dashboard() {
                 <Send className="w-4 h-4" />
               </Button>
             </div>
-            <p className="text-xs text-muted-foreground mt-1">AI Assistant - Ask questions about this client research</p>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="p-4 space-y-2">
+            <h4 className="text-xs text-muted-foreground mb-3">Quick Actions</h4>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <TrendingUp className="w-4 h-4 mr-2" />
+              Financial Summary
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <Users className="w-4 h-4 mr-2" />
+              Network Analysis
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <Brain className="w-4 h-4 mr-2" />
+              Investment Thesis
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
+              <CheckCircle className="w-4 h-4 mr-2" />
+              Key Metrics
+            </Button>
+          </div>
+
+          {/* Chat History */}
+          <div className="flex-1 p-4">
+            <h4 className="text-xs text-muted-foreground mb-3">Recent Queries</h4>
+            <div className="space-y-2 text-sm">
+              <div className="p-2 bg-sidebar-accent rounded text-sidebar-foreground">
+                "What's Tesla's current market position?"
+              </div>
+              <div className="p-2 bg-muted rounded text-muted-foreground">
+                "Show me the competitive analysis"
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Status */}
+          <div className="p-4 border-t border-sidebar-border">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-xs text-muted-foreground">AI Online</span>
+            </div>
           </div>
         </div>
-        
-        <ResearchResults task={selectedCompany} />
       </div>
     );
   }
