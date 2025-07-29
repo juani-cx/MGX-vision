@@ -1,0 +1,46 @@
+> ai-research-app@0.1.0 dev
+
+  VITE v5.4.19  ready in 241 ms
+
+  ➜  Local:   http://localhost:5000/
+  ➜  Network: http://172.31.94.226:5000/
+  ➜  press h + enter to show help
+6:09:27 PM [vite] Pre-transform error: [postcss] /home/runner/workspace/styles/globals.css:122:1: `@layer base` is used but no matching `@tailwind base` directive is present.
+
+6:09:28 PM [vite] Internal server error: [postcss] /home/runner/workspace/styles/globals.css:122:1: `@layer base` is used but no matching `@tailwind base` directive is present.
+  Plugin: vite:css
+  File: /home/runner/workspace/styles/globals.css:122:0
+  120|  }
+  121|  
+  122|  @layer base {
+     |  ^
+  123|    * {
+  124|      @apply border-border outline-ring/50;
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at normalizeTailwindDirectives (/home/runner/workspace/node_modules/tailwindcss/lib/lib/normalizeTailwindDirectives.js:72:32)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:29:98
+      at plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:69)
+      at LazyResult.runOnRoot (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:361:16)
+      at LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:290:26)
+      at LazyResult.async (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:192:30)
+      at LazyResult.then (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:436:17)
+
+6:09:28 PM [vite] Internal server error: [postcss] /home/runner/workspace/styles/globals.css:122:1: `@layer base` is used but no matching `@tailwind base` directive is present.
+  Plugin: vite:css
+  File: /home/runner/workspace/styles/globals.css:122:0
+  120|  }
+  121|  
+  122|  @layer base {
+     |  ^
+  123|    * {
+  124|      @apply border-border outline-ring/50;
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at normalizeTailwindDirectives (/home/runner/workspace/node_modules/tailwindcss/lib/lib/normalizeTailwindDirectives.js:72:32)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:29:98
+      at plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:69)
+      at LazyResult.runOnRoot (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:361:16)
+      at LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:290:26)
+      at LazyResult.async (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:192:30)
+      at LazyResult.then (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:436:17) (x2)
