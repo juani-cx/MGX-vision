@@ -1,0 +1,71 @@
+
+> ai-research-app@0.1.0 dev
+> vite
+
+
+
+  VITE v5.4.19  ready in 529 ms
+
+  ➜  Local:   http://localhost:5000/
+  ➜  Network: http://172.31.94.226:5000/
+  ➜  press h + enter to show help
+
+6:13:37 PM [vite] Internal server error: [postcss] /home/runner/workspace/styles/globals.css:1:1: The `outline-ring/50` class does not exist. If `outline-ring/50` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: /home/runner/workspace/styles/globals.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:51977:27)
+6:13:37 PM [vite] Pre-transform error: [postcss] /home/runner/workspace/styles/globals.css:1:1: The `outline-ring/50` class does not exist. If `outline-ring/50` is a custom class, make sure it is defined within a `@layer` directive.
+
+6:13:37 PM [vite] Internal server error: [postcss] /home/runner/workspace/styles/globals.css:1:1: The `outline-ring/50` class does not exist. If `outline-ring/50` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: /home/runner/workspace/styles/globals.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:51977:27)
+      at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:62105:24)
+
+6:13:50 PM [vite] Internal server error: [postcss] /home/runner/workspace/styles/globals.css:1:1: The `outline-ring/50` class does not exist. If `outline-ring/50` is a custom class, make sure it is defined within a `@layer` directive.
+  Plugin: vite:css
+  File: /home/runner/workspace/styles/globals.css:1:0
+  1  |  @tailwind base;
+     |  ^
+  2  |  @tailwind components;
+  3  |  @tailwind utilities;
+      at Input.error (/home/runner/workspace/node_modules/postcss/lib/input.js:135:16)
+      at AtRule.error (/home/runner/workspace/node_modules/postcss/lib/node.js:146:32)
+      at processApply (/home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+      at /home/runner/workspace/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+      at /home/runner/workspace/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+      at async plugins (/home/runner/workspace/node_modules/tailwindcss/lib/plugin.js:38:17)
+      at async LazyResult.runAsync (/home/runner/workspace/node_modules/postcss/lib/lazy-result.js:293:11)
+      at async compileCSS (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36898:21)
+      at async TransformPluginContext.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:36171:11)
+      at async PluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:49099:18)
+      at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:51977:27)
+      at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:62105:24) (x2)
