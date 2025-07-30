@@ -303,26 +303,25 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
   };
 
   return (
-    <div className="flex-1 bg-gray-50">
+    <div className="flex-1 bg-gray-50 pr-80">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-8 py-6">
+      <div className="bg-white border-b border-gray-200 px-6 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" onClick={onBack} className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Dashboard
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">{researchData.companyName}</h1>
-              <div className="flex items-center gap-3 mt-1">
-                <span className="text-sm text-gray-600">{researchData.industrySector}</span>
-                <Badge className={getStatusColor(researchData.status)}>
-                  {researchData.status}
-                </Badge>
-                <Badge className={getPriorityColor(researchData.priorityLevel)}>
-                  {researchData.priorityLevel} priority
-                </Badge>
-              </div>
+          <div>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <button onClick={onBack} className="hover:text-gray-900">Dashboard</button>
+              <span>/</span>
+              <span className="text-gray-900">AI Research</span>
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900">{researchData.companyName}</h1>
+            <div className="flex items-center gap-3 mt-1">
+              <span className="text-sm text-gray-600">{researchData.industrySector}</span>
+              <Badge className={getStatusColor(researchData.status)}>
+                {researchData.status}
+              </Badge>
+              <Badge className={getPriorityColor(researchData.priorityLevel)}>
+                {researchData.priorityLevel} priority
+              </Badge>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -346,15 +345,14 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
       </div>
 
       {/* Content */}
-      <div className="p-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Sidebar */}
-          <div className="lg:col-span-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Research Overview</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
+      <div className="flex-1 flex">
+        {/* Fixed Left Sidebar */}
+        <div className="w-80 bg-white border-r border-gray-200 p-6">
+          <Card className="border-0 shadow-none">
+            <CardHeader className="px-0">
+              <CardTitle className="text-lg">Research Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="px-0 space-y-4">
                 <div>
                   <p className="text-sm text-gray-600">Assigned To</p>
                   <p className="font-medium">{researchData.assignedTo}</p>
@@ -388,13 +386,13 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                   </div>
                 )}
               </CardContent>
-            </Card>
-          </div>
+          </Card>
+        </div>
 
-          {/* Main Content */}
-          <div className="lg:col-span-6">
-            <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
+        {/* Main Content - Full Width */}
+        <div className="flex-1 p-6">
+          <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
                 {(researchData.researchFocusAreas || []).slice(0, 6).map(area => (
                   <TabsTrigger
                     key={area}
@@ -412,7 +410,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
                 return (
                   <TabsContent key={area} value={area}>
-                    <Card>
+                    <Card className="border shadow-none">
                       <CardHeader>
                         <div className="flex items-center justify-between">
                           <div>
@@ -563,7 +561,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
               {(!researchData.researchFocusAreas || researchData.researchFocusAreas.length === 0) && (
                 <TabsContent value="overview">
-                  <Card>
+                  <Card className="border shadow-none">
                     <CardHeader>
                       <CardTitle>Research Overview</CardTitle>
                       <CardDescription>
@@ -582,93 +580,92 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 </TabsContent>
               )}
             </Tabs>
-          </div>
+        </div>
+      </div>
 
-          {/* AI Assistant Panel */}
-          <div className="lg:col-span-3">
-            <div className="sticky top-8">
-              <Card className="shadow-lg">
-                <CardHeader className="bg-gray-50 border-b">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-blue-600">AI</span>
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">AI Assistant</CardTitle>
-                      <p className="text-sm text-gray-600">Ready to help with analysis</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-4 space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-700 mb-3">Quick Actions:</p>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start text-sm h-9"
-                      onClick={() => {/* Handle summary generation */}}
-                    >
-                      📊 Generate Summary
-                    </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start text-sm h-9"
-                      onClick={() => {/* Handle financial report */}}
-                    >
-                      💼 Financial Report
-                    </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start text-sm h-9"
-                      onClick={() => {/* Handle competitor analysis */}}
-                    >
-                      🏢 Competitor Analysis
-                    </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start text-sm h-9"
-                      onClick={() => {/* Handle market insights */}}
-                    >
-                      📈 Market Insights
-                    </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start text-sm h-9"
-                      onClick={() => {/* Handle risk assessment */}}
-                    >
-                      ⚠️ Risk Assessment
-                    </Button>
-                  </div>
+      {/* Fixed AI Assistant Panel */}
+      <div className="fixed top-20 right-0 w-80 h-full bg-white border-l border-gray-200 z-10">
+        <div className="p-6 h-full overflow-y-auto">
+          <Card className="border-0 shadow-none">
+            <CardHeader className="px-0 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold text-blue-600">AI</span>
+                </div>
+                <div>
+                  <CardTitle className="text-lg">AI Assistant</CardTitle>
+                  <p className="text-sm text-gray-600">Ready to help with analysis</p>
+                </div>
+              </div>
+            </CardHeader>
+                <CardContent className="px-0 space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-gray-700 mb-3">Quick Actions:</p>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start text-sm h-9"
+                  onClick={() => {/* Handle summary generation */}}
+                >
+                  📊 Generate Summary
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start text-sm h-9"
+                  onClick={() => {/* Handle financial report */}}
+                >
+                  💼 Financial Report
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start text-sm h-9"
+                  onClick={() => {/* Handle competitor analysis */}}
+                >
+                  🏢 Competitor Analysis
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start text-sm h-9"
+                  onClick={() => {/* Handle market insights */}}
+                >
+                  📈 Market Insights
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start text-sm h-9"
+                  onClick={() => {/* Handle risk assessment */}}
+                >
+                  ⚠️ Risk Assessment
+                </Button>
+              </div>
 
-                  <div className="border-t pt-4">
-                    <div className="bg-blue-50 rounded-lg p-3">
-                      <p className="text-sm text-blue-800">
-                        💡 <strong>Tip:</strong> Click any action above to get AI-powered insights for this research.
-                      </p>
-                    </div>
-                  </div>
+              <div className="border-t pt-4">
+                <div className="bg-blue-50 rounded-lg p-3">
+                  <p className="text-sm text-blue-800">
+                    💡 <strong>Tip:</strong> Click any action above to get AI-powered insights for this research.
+                  </p>
+                </div>
+              </div>
 
-                  <div className="border-t pt-4">
-                    <p className="text-xs text-gray-500 mb-2">Ask me anything:</p>
-                    <div className="flex gap-2">
-                      <input 
-                        type="text" 
-                        placeholder="Type your question..."
-                        className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                      <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90">
-                        Ask
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+              <div className="border-t pt-4">
+                <p className="text-xs text-gray-500 mb-2">Ask me anything:</p>
+                <div className="flex gap-2">
+                  <input 
+                    type="text" 
+                    placeholder="Type your question..."
+                    className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90">
+                    Ask
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
