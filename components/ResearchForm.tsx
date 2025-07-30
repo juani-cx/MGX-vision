@@ -106,9 +106,8 @@ export function ResearchForm({ onBack, onSubmit, initialData }: ResearchFormProp
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" disabled={!isValid}>
-              <Save className="w-4 h-4 mr-2" />
-              Save Draft
+            <Button variant="outline" onClick={onBack}>
+              Cancel
             </Button>
             <Button 
               onClick={handleSubmit} 
