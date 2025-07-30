@@ -31,10 +31,11 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
         {/* Logo/Header */}
         <div className="p-6 border-b border-[#20308e]">
           <div className="flex items-center justify-center">
-            <div className="w-32 h-20 bg-gray-300 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-lg">IIGX</span>
-              <span className="text-white text-sm ml-2">InvestAI</span>
-            </div>
+            <img 
+              src="/api/placeholder/128/80" 
+              alt="IIGX InvestAI" 
+              className="w-32 h-20 object-contain"
+            />
           </div>
         </div>
 
