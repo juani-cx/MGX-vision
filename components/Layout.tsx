@@ -1,4 +1,5 @@
-import { Search, Bell, Calendar, Settings, Home, Users, TrendingUp, Database, Brain, Target } from "lucide-react";
+
+import { Search, Bell, Calendar, Settings, Home, Users, TrendingUp, Database, Brain, Target, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -9,6 +10,12 @@ interface LayoutProps {
 
 export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
   const mainMenuItems = [
+    { id: "notifications", label: "Notifications", icon: Bell, badge: "99+" },
+    { id: "calendar", label: "Calendar", icon: Calendar },
+    { id: "settings", label: "Settings", icon: Settings },
+  ];
+
+  const mainPages = [
     { id: "dashboard", label: "Dashboard", icon: Home },
     { id: "research", label: "AI Research", icon: Brain },
     { id: "clients", label: "Client Network", icon: Users },
@@ -18,18 +25,15 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
   ];
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen bg-white">
       {/* Sidebar */}
-      <div className="w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
+      <div className="w-56 bg-[#0f1951] flex flex-col">
         {/* Logo/Header */}
-        <div className="p-6 border-b border-sidebar-border">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Brain className="w-4 h-4 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-sidebar-foreground">InvestAI</h1>
-              <p className="text-xs text-muted-foreground">Strategic Platform</p>
+        <div className="p-6 border-b border-[#20308e]">
+          <div className="flex items-center justify-center">
+            <div className="w-32 h-20 bg-gray-300 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-lg">IIGX</span>
+              <span className="text-white text-sm ml-2">InvestAI</span>
             </div>
           </div>
         </div>
@@ -37,40 +41,32 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
         {/* Main Menu */}
         <div className="flex-1 p-4">
           <div className="mb-6">
-            <h3 className="text-xs text-muted-foreground mb-2 px-2">Main menu</h3>
+            <h3 className="text-xs text-white/60 mb-3 px-2">Main menu</h3>
             <div className="space-y-1">
-              <div className="relative mb-4">
-                <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-                <Input 
-                  placeholder="Search" 
-                  className="pl-9 bg-input-background border-0 text-sm h-9"
-                />
-              </div>
-              
-              <div className="flex items-center gap-2 px-2 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-sidebar-accent rounded-lg cursor-pointer">
-                <Bell className="w-4 h-4" />
-                <span>Notifications</span>
-                <span className="ml-auto bg-destructive text-destructive-foreground text-xs px-1.5 py-0.5 rounded">
-                  99+
-                </span>
-              </div>
-              
-              <div className="flex items-center gap-2 px-2 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-sidebar-accent rounded-lg cursor-pointer">
-                <Calendar className="w-4 h-4" />
-                <span>Calendar</span>
-              </div>
-              
-              <div className="flex items-center gap-2 px-2 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-sidebar-accent rounded-lg cursor-pointer">
-                <Settings className="w-4 h-4" />
-                <span>Settings</span>
-              </div>
+              {mainMenuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.id}
+                    className="flex items-center gap-2 px-2 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg cursor-pointer"
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span className="flex-1">{item.label}</span>
+                    {item.badge && (
+                      <span className="bg-[#e3982f] text-white text-xs px-1.5 py-0.5 rounded">
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           <div>
-            <h3 className="text-xs text-muted-foreground mb-2 px-2">Main pages</h3>
+            <h3 className="text-xs text-white/60 mb-3 px-2">Main pages</h3>
             <div className="space-y-1">
-              {mainMenuItems.map((item) => {
+              {mainPages.map((item) => {
                 const Icon = item.icon;
                 const isActive = currentPage === item.id;
                 return (
@@ -78,12 +74,12 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
                     key={item.id}
                     className={`flex items-center gap-2 px-2 py-2 text-sm rounded-lg cursor-pointer transition-colors ${
                       isActive 
-                        ? "bg-sidebar-primary text-sidebar-primary-foreground" 
-                        : "text-sidebar-foreground hover:bg-sidebar-accent"
+                        ? "bg-[#504b95] text-white" 
+                        : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                   >
                     <div className={`w-4 h-4 rounded text-xs flex items-center justify-center ${
-                      isActive ? "bg-sidebar-primary-foreground text-sidebar-primary" : "bg-primary text-primary-foreground"
+                      isActive ? "bg-white text-[#504b95]" : "bg-[#030213]"
                     }`}>
                       <Icon className="w-3 h-3" />
                     </div>
@@ -95,21 +91,22 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
           </div>
 
           <div className="mt-6">
-            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-              + Create new
+            <Button variant="ghost" size="sm" className="w-full justify-start text-white hover:bg-white/10">
+              <Plus className="w-4 h-4 mr-2" />
+              Create new
             </Button>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="p-4 border-t border-sidebar-border">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-              <span className="text-xs">AI</span>
+        <div className="p-4 border-t border-[#20308e]">
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 bg-gray-300 rounded-full flex items-center justify-center">
+              <span className="text-xs text-black font-medium">AI</span>
             </div>
             <div>
-              <p className="text-sm text-sidebar-foreground">AI Assistant</p>
-              <p className="text-xs text-muted-foreground">Ready to help</p>
+              <p className="text-sm text-white">AI Assistant</p>
+              <p className="text-xs text-white/60">Ready to help</p>
             </div>
           </div>
         </div>

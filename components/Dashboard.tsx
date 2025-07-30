@@ -1,29 +1,17 @@
 import { useState } from "react";
-import { Plus, Filter, Search, MoreHorizontal, Brain, TrendingUp, Users, Clock, CheckCircle, Send } from "lucide-react";
+import { Plus, Filter, Search, MoreVertical, Brain, TrendingUp, Users, Clock, CheckCircle, Send, Calendar, Home, ChevronUp } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { AIResearchPrompt } from "./AIResearchPrompt";
-import { ResearchResults } from "./ResearchResults";
-
-interface Company {
-  id: string;
-  name: string;
-  type: string;
-  status: "processing" | "completed" | "failed";
-  createdAt: string;
-  priority: "high" | "medium" | "low";
-  assignee: string;
-  results?: any;
-}
 
 export function Dashboard() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [showNewResearch, setShowNewResearch] = useState(false);
-  const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
-  
-  const [companies, setCompanies] = useState<Company[]>([
+  const [selectedCompany, setSelectedCompany] = useState<any | null>(null);
+
+  const [companies, setCompanies] = useState<any[]>([
     {
       id: "1",
       name: "Tesla Inc.",
@@ -114,9 +102,103 @@ export function Dashboard() {
     }
   ]);
 
+  const activeResearchData = [
+    {
+      id: 1,
+      company: "Big Kahuna Burger Ltd.",
+      dueDate: "Due Date 24 Jan 2023",
+      badges: [
+        { label: "Internal", color: "bg-orange-100 text-orange-600" },
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Urgent", color: "bg-red-100 text-red-600" }
+      ],
+      members: 4
+    },
+    {
+      id: 2,
+      company: "Acme Co.",
+      dueDate: "Due Date 18 Jan 2023",
+      badges: [
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Event", color: "bg-purple-100 text-purple-600" },
+        { label: "Urgent", color: "bg-red-100 text-red-600" }
+      ],
+      members: 3
+    },
+    {
+      id: 3,
+      company: "Binford Ltd.",
+      dueDate: "Due Date 31 Jan 2023",
+      badges: [
+        { label: "Internal", color: "bg-orange-100 text-orange-600" },
+        { label: "Document", color: "bg-blue-100 text-blue-600" },
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" }
+      ],
+      members: 4
+    }
+  ];
+
+  const latestAnalysisData = [
+    {
+      id: 1,
+      company: "Binford Ltd.",
+      dueDate: "Due Date 11 Jan 2023",
+      badges: [
+        { label: "Report", color: "bg-green-100 text-green-600" },
+        { label: "Event", color: "bg-purple-100 text-purple-600" },
+        { label: "Urgent", color: "bg-red-100 text-red-600" }
+      ],
+      members: 2
+    },
+    {
+      id: 2,
+      company: "Barone LLC.",
+      dueDate: "Due Date 09 Jan 2023",
+      badges: [
+        { label: "Report", color: "bg-green-100 text-green-600" },
+        { label: "Document", color: "bg-blue-100 text-blue-600" },
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" }
+      ],
+      members: 3
+    },
+    {
+      id: 3,
+      company: "Binford Ltd.",
+      dueDate: "Due Date 12 Jan 2023",
+      badges: [
+        { label: "Internal", color: "bg-orange-100 text-orange-600" },
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Urgent", color: "bg-red-100 text-red-600" }
+      ],
+      members: 4
+    },
+    {
+      id: 4,
+      company: "Abstergo Ltd.",
+      dueDate: "Due Date 15 Jan 2023",
+      badges: [
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Event", color: "bg-purple-100 text-purple-600" },
+        { label: "Urgent", color: "bg-red-100 text-red-600" }
+      ],
+      members: 3
+    },
+    {
+      id: 5,
+      company: "Biffco Enterprises Ltd.",
+      dueDate: "Due Date 13 Jan 2023",
+      badges: [
+        { label: "Internal", color: "bg-orange-100 text-orange-600" },
+        { label: "Document", color: "bg-blue-100 text-blue-600" },
+        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" }
+      ],
+      members: 2
+    }
+  ];
+
   const handleNewResearch = (prompt: string, type: string) => {
     const companyName = prompt.split(' ')[0]; // Extract company name from prompt
-    const newCompany: Company = {
+    const newCompany = {
       id: Date.now().toString(),
       name: companyName,
       type: type.charAt(0).toUpperCase() + type.slice(1) + " Analysis",
@@ -133,7 +215,7 @@ export function Dashboard() {
     setTimeout(() => {
       setCompanies(prev => prev.map(company => 
         company.id === newCompany.id 
-          ? { ...company, status: "completed" as const, results: { /* mock results */ } }
+          ? { ...company, status: "completed", results: { /* mock results */ } }
           : company
       ));
     }, 3000);
@@ -156,6 +238,43 @@ export function Dashboard() {
       default: return "text-gray-600 bg-gray-100";
     }
   };
+
+  const renderMemberAvatars = (count: number) => {
+    return (
+      <div className="flex -space-x-2">
+        {Array.from({ length: Math.min(count, 4) }).map((_, index) => (
+          <div
+            key={index}
+            className="w-7 h-7 rounded-full bg-gray-300 border-2 border-white"
+          />
+        ))}
+      </div>
+    );
+  };
+
+  const renderListItem = (item: any, isHeader = false) => (
+    <div key={item.id} className={`border border-gray-200 rounded p-4 flex items-center gap-4 ${isHeader ? 'bg-gray-50' : 'bg-white'}`}>
+      <input type="checkbox" className="w-5 h-5 rounded border border-gray-300" />
+      <div className="flex-1 font-medium text-sm">{item.company}</div>
+      <div className="flex items-center gap-2 text-sm text-gray-600 w-48">
+        <Calendar className="w-4 h-4" />
+        <span>{item.dueDate}</span>
+      </div>
+      <div className="flex gap-2 w-60">
+        {item.badges.map((badge: any, index: number) => (
+          <span key={index} className={`px-2 py-1 rounded text-xs ${badge.color}`}>
+            {badge.label}
+          </span>
+        ))}
+      </div>
+      <div className="w-20 flex justify-end">
+        {renderMemberAvatars(item.members)}
+      </div>
+      <button className="p-1">
+        <MoreVertical className="w-5 h-5" />
+      </button>
+    </div>
+  );
 
   if (selectedCompany) {
     return (
@@ -180,7 +299,6 @@ export function Dashboard() {
           </div>
           
           <div className="flex-1 overflow-auto">
-            <ResearchResults task={selectedCompany} />
           </div>
         </div>
 
@@ -261,172 +379,139 @@ export function Dashboard() {
   return (
     <div className="flex-1 flex flex-col">
       {/* Header */}
-      <div className="border-b border-border p-6">
+      <div className="border-b border-gray-200 bg-white px-6 py-5">
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl">AI Strategic Platform</h1>
-            <p className="text-muted-foreground">Company analysis and network intelligence</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">AI</span>
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-full border-2 border-background flex items-center justify-center">
-                  <span className="text-xs text-primary-foreground">PA</span>
-                </div>
-                <div className="w-8 h-8 bg-secondary rounded-full border-2 border-background flex items-center justify-center">
-                  <span className="text-xs text-secondary-foreground">AL</span>
-                </div>
-              </div>
+          <div className="flex items-center gap-6 flex-1">
+            <div className="relative flex-1 max-w-lg">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                placeholder="Search companies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 bg-white border border-gray-300 h-8"
+              />
             </div>
-            <Button onClick={() => setShowNewResearch(true)} className="flex items-center gap-2">
-              <Plus className="w-4 h-4" />
-              New Research
-            </Button>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1 border border-green-300 rounded-lg">
+              <div className="w-3 h-3 text-green-600">
+                <CheckCircle className="w-3 h-3" />
+              </div>
+              <span className="text-green-600 text-sm">All Systems Operational</span>
+            </div>
+            <div className="w-8 h-8 rounded-full bg-gray-300" />
           </div>
         </div>
       </div>
 
-      {/* Quick Stats */}
-      {!showNewResearch && (
-      <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <Brain className="w-5 h-5 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Active Research</p>
-                <p className="text-2xl">12</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Opportunities</p>
-                <p className="text-2xl">47</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Network Connections</p>
-                <p className="text-2xl">1,247</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 text-orange-600" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Avg. Research Time</p>
-                <p className="text-2xl">4.2h</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      )}
-
       {/* Main Content */}
-      <div className="flex-1 p-6">
-        {showNewResearch ? (
-          <div className="w-full">
+      <div className="flex-1 bg-gray-50">
+        {/* Page Header */}
+        <div className="bg-gray-100 border-b border-gray-200 px-8 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                <Home className="w-4 h-4" />
+                <span>Home Page</span>
+              </div>
+              <h1 className="text-2xl font-bold text-gray-900">Activity summary</h1>
+            </div>
+            <Button onClick={() => setShowNewResearch(true)} className="bg-[#0f1951] hover:bg-[#0f1951]/90 text-white">
+              <Plus className="w-4 h-4 mr-2" />
+              New Research
+            </Button>
+          </div>
+
+          {/* AI Assistant Card */}
+          <Card className="mt-6 shadow-lg">
+            <CardHeader className="bg-gray-50 border-b">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center">
+                    <Brain className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold">AI Assistant</h3>
+                    <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Always-On</span>
+                  </div>
+                </div>
+                <button className="p-2">
+                  <MoreVertical className="w-4 h-4" />
+                </button>
+              </div>
+            </CardHeader>
+            <CardContent className="p-4">
+              <div className="bg-gray-100 rounded-lg p-3">
+                <p className="text-sm text-gray-700">👋 Ask me about any company or contact</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Content Sections */}
+        <div className="p-8 space-y-8">
+          {/* Active Research */}
+          <section>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl">Research Details</h2>
-              <Button variant="ghost" onClick={() => setShowNewResearch(false)}>
-                Cancel
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-yellow-400 rounded-full" />
+                <div>
+                  <h2 className="text-xl font-medium">Active researchs</h2>
+                  <p className="text-sm text-gray-600">3 companies listed</p>
+                </div>
+              </div>
+              <Button variant="outline" size="sm" className="flex items-center gap-2">
+                <Filter className="w-4 h-4" />
+                Sort By
               </Button>
             </div>
-            <AIResearchPrompt onSubmit={handleNewResearch} />
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {/* Filters and Search */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-                  <Input placeholder="Search companies..." className="pl-9 w-80" />
-                </div>
-                <Select>
-                  <SelectTrigger className="w-40">
-                    <SelectValue placeholder="Filter" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Types</SelectItem>
-                    <SelectItem value="financial">Financial Analysis</SelectItem>
-                    <SelectItem value="network">Network Analysis</SelectItem>
-                    <SelectItem value="market">Market Research</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Button variant="outline" size="sm">
-                  <Filter className="w-4 h-4" />
-                </Button>
+            <div className="space-y-4">
+              {activeResearchData.map(item => renderListItem(item, item.id === 1))}
+            </div>
+          </section>
+
+          {/* Latest Analysis */}
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <ChevronUp className="w-6 h-6 text-gray-400" />
+              <div className="w-3 h-3 bg-blue-500 rounded-full" />
+              <div>
+                <h2 className="text-xl font-medium">Latest analysis</h2>
+                <p className="text-sm text-gray-600">5 companies listed</p>
               </div>
             </div>
+            <div className="space-y-4">
+              {latestAnalysisData.map(item => renderListItem(item))}
+            </div>
+          </section>
+        </div>
 
-            {/* Tasks List */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Companies</CardTitle>
-                <CardDescription>Track and manage your company research</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {companies.map((company) => (
-                    <div
-                      key={company.id}
-                      className="flex items-center gap-4 p-4 border rounded-lg hover:bg-muted/50 cursor-pointer"
-                      onClick={() => company.status === "completed" && setSelectedCompany(company)}
-                    >
-                      <div className="w-2 h-8 bg-primary rounded-full"></div>
-                      <div className="flex-1">
-                        <h4>{company.name}</h4>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Badge variant="outline" className="text-xs">{company.type}</Badge>
-                          <span className="text-sm text-muted-foreground">• {company.createdAt}</span>
-                        </div>
-                      </div>
-                      <Badge className={getStatusColor(company.status)}>
-                        {company.status}
-                      </Badge>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">{company.assignee}</span>
-                        <Badge className={getPriorityColor(company.priority)}>
-                          {company.priority}
-                        </Badge>
-                      </div>
-                      <Button variant="ghost" size="sm">
-                        <MoreHorizontal className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  ))}
+        {/* Floating AI Assistant */}
+        <div className="fixed bottom-8 right-8">
+          <Card className="w-96 shadow-xl">
+            <CardHeader className="bg-gray-50 border-b">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-bold">AI Assistant</h3>
+                  <p className="text-sm text-gray-600">Ask me anything</p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
+                <button className="p-2">
+                  <MoreVertical className="w-4 h-4" />
+                </button>
+              </div>
+            </CardHeader>
+            <CardContent className="p-4">
+              <div className="flex gap-3">
+                <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Brain className="w-4 h-4 text-blue-600" />
+                </div>
+                <div className="bg-gray-100 rounded-lg p-3 flex-1">
+                  <p className="text-sm text-gray-700">Ask me about any company or contact</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
