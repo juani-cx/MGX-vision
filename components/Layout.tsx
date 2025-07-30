@@ -32,7 +32,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
         <div className="p-6 border-b border-[#20308e]">
           <div className="flex items-center justify-center">
             <img 
-              src="/api/placeholder/128/80" 
+              src="/attached_assets/image_1753890145556.png" 
               alt="IIGX InvestAI" 
               className="w-32 h-20 object-contain"
             />
