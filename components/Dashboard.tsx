@@ -143,59 +143,130 @@ export function Dashboard() {
 
   const latestAnalysisData = [
     {
-      id: 1,
-      company: "Binford Ltd.",
-      dueDate: "Due Date 11 Jan 2023",
-      badges: [
-        { label: "Report", color: "bg-green-100 text-green-600" },
-        { label: "Event", color: "bg-purple-100 text-purple-600" },
-        { label: "Urgent", color: "bg-red-100 text-red-600" }
-      ],
-      members: 2
-    },
-    {
-      id: 2,
-      company: "Barone LLC.",
-      dueDate: "Due Date 09 Jan 2023",
-      badges: [
-        { label: "Report", color: "bg-green-100 text-green-600" },
-        { label: "Document", color: "bg-blue-100 text-blue-600" },
-        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" }
-      ],
-      members: 3
-    },
-    {
-      id: 3,
-      company: "Binford Ltd.",
-      dueDate: "Due Date 12 Jan 2023",
-      badges: [
-        { label: "Internal", color: "bg-orange-100 text-orange-600" },
-        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
-        { label: "Urgent", color: "bg-red-100 text-red-600" }
-      ],
-      members: 4
-    },
-    {
       id: 4,
-      company: "Abstergo Ltd.",
-      dueDate: "Due Date 15 Jan 2023",
+      companyName: "Tesla Inc.",
+      industrySector: "Automotive",
+      status: "completed" as const,
+      priorityLevel: "high" as const,
+      assignedTo: "John Smith",
+      createdAt: "2024-01-15",
+      lastUpdated: "2024-01-20",
+      company: "Tesla Inc.",
+      dueDate: "Completed Jan 20, 2024",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "product-competitiveness", 
+        "business-model-analysis",
+        "market-share-data",
+        "industry-trends",
+        "market-sizing"
+      ],
+      additionalNotes: "Comprehensive analysis of Tesla's market position and competitive landscape.",
       badges: [
-        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" },
-        { label: "Event", color: "bg-purple-100 text-purple-600" },
-        { label: "Urgent", color: "bg-red-100 text-red-600" }
+        { label: "Automotive", color: "bg-blue-100 text-blue-600" },
+        { label: "High Priority", color: "bg-red-100 text-red-600" },
+        { label: "Completed", color: "bg-green-100 text-green-600" }
       ],
       members: 3
     },
     {
       id: 5,
-      company: "Biffco Enterprises Ltd.",
-      dueDate: "Due Date 13 Jan 2023",
+      companyName: "SpaceX",
+      industrySector: "Aerospace",
+      status: "completed" as const,
+      priorityLevel: "medium" as const,
+      assignedTo: "Sarah Johnson",
+      createdAt: "2024-01-10",
+      lastUpdated: "2024-01-18",
+      company: "SpaceX",
+      dueDate: "Completed Jan 18, 2024",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "funding-activity",
+        "technical-stack",
+        "industry-trends"
+      ],
+      additionalNotes: "Analysis of SpaceX's competitive position in commercial space industry.",
       badges: [
-        { label: "Internal", color: "bg-orange-100 text-orange-600" },
-        { label: "Document", color: "bg-blue-100 text-blue-600" },
-        { label: "Marketing", color: "bg-yellow-100 text-yellow-600" }
+        { label: "Aerospace", color: "bg-purple-100 text-purple-600" },
+        { label: "Medium Priority", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Completed", color: "bg-green-100 text-green-600" }
       ],
       members: 2
+    },
+    {
+      id: 6,
+      companyName: "OpenAI",
+      industrySector: "Technology",
+      status: "processing" as const,
+      priorityLevel: "high" as const,
+      assignedTo: "Mike Wilson",
+      createdAt: "2024-01-22",
+      lastUpdated: "2024-01-23",
+      company: "OpenAI",
+      dueDate: "Due Jan 30, 2024",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "product-competitiveness",
+        "funding-activity",
+        "technical-stack"
+      ],
+      additionalNotes: "Research on OpenAI's competitive position in AI/ML market.",
+      badges: [
+        { label: "Technology", color: "bg-blue-100 text-blue-600" },
+        { label: "High Priority", color: "bg-red-100 text-red-600" },
+        { label: "Processing", color: "bg-yellow-100 text-yellow-600" }
+      ],
+      members: 4
+    },
+    {
+      id: 7,
+      companyName: "Netflix",
+      industrySector: "Entertainment",
+      status: "completed" as const,
+      priorityLevel: "low" as const,
+      assignedTo: "Emma Davis",
+      createdAt: "2024-01-08",
+      lastUpdated: "2024-01-15",
+      company: "Netflix",
+      dueDate: "Completed Jan 15, 2024",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "market-share-data",
+        "business-model-analysis"
+      ],
+      additionalNotes: "Streaming market analysis and competitive positioning.",
+      badges: [
+        { label: "Entertainment", color: "bg-pink-100 text-pink-600" },
+        { label: "Low Priority", color: "bg-green-100 text-green-600" },
+        { label: "Completed", color: "bg-green-100 text-green-600" }
+      ],
+      members: 2
+    },
+    {
+      id: 8,
+      companyName: "Amazon",
+      industrySector: "E-commerce",
+      status: "completed" as const,
+      priorityLevel: "medium" as const,
+      assignedTo: "Alex Brown",
+      createdAt: "2024-01-05",
+      lastUpdated: "2024-01-12",
+      company: "Amazon",
+      dueDate: "Completed Jan 12, 2024",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "business-model-analysis",
+        "market-share-data",
+        "product-deep-dives"
+      ],
+      additionalNotes: "E-commerce and cloud services competitive analysis.",
+      badges: [
+        { label: "E-commerce", color: "bg-orange-100 text-orange-600" },
+        { label: "Medium Priority", color: "bg-yellow-100 text-yellow-600" },
+        { label: "Completed", color: "bg-green-100 text-green-600" }
+      ],
+      members: 3
     }
   ];
 
@@ -216,11 +287,11 @@ export function Dashboard() {
       priorityLevel: formData.priorityLevel,
       assignedTo: formData.assignedTo
     };
-    
+
     setCompanies([newCompany, ...companies]);
     setShowNewResearch(false);
     setSelectedCompany(newCompany);
-    
+
     // Simulate processing completion after 3 seconds
     setTimeout(() => {
       setCompanies(prev => prev.map(company => 
@@ -331,7 +402,7 @@ export function Dashboard() {
 
   return (
     <div className="flex-1 flex flex-col">
-      
+
       {/* Main Content */}
       <div className="flex-1 bg-gray-50">
         {/* Page Header */}
