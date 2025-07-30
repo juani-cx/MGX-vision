@@ -370,11 +370,15 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 <div>
                   <p className="text-sm text-gray-600">Focus Areas</p>
                   <div className="space-y-1 mt-1">
-                    {researchData.researchFocusAreas?.map(area => (
-                      <Badge key={area} variant="secondary" className="text-xs">
-                        {focusAreaLabels[area]}
-                      </Badge>
-                    )) || <p className="text-sm text-gray-500">No focus areas defined</p>}
+                    {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 ? (
+                      researchData.researchFocusAreas.map(area => (
+                        <Badge key={area} variant="secondary" className="text-xs">
+                          {focusAreaLabels[area]}
+                        </Badge>
+                      ))
+                    ) : (
+                      <p className="text-sm text-gray-500">No focus areas defined</p>
+                    )}
                   </div>
                 </div>
                 {researchData.additionalNotes && (
@@ -389,9 +393,9 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
           {/* Main Content */}
           <div className="lg:col-span-6">
-            <Tabs defaultValue={researchData.researchFocusAreas?.[0] || "overview"} className="space-y-6">
+            <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
               <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
-                {researchData.researchFocusAreas?.slice(0, 6).map(area => (
+                {(researchData.researchFocusAreas || []).slice(0, 6).map(area => (
                   <TabsTrigger
                     key={area}
                     value={area}
@@ -402,7 +406,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 ))}
               </TabsList>
 
-              {researchData.researchFocusAreas?.map(area => {
+              {(researchData.researchFocusAreas || []).map(area => {
                 const mockData = mockDataMap[area];
                 if (!mockData) return null;
 
@@ -555,7 +559,9 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                     </Card>
                   </TabsContent>
                 );
-              }) || (
+              })}
+
+              {(!researchData.researchFocusAreas || researchData.researchFocusAreas.length === 0) && (
                 <TabsContent value="overview">
                   <Card>
                     <CardHeader>
