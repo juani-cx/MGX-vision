@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowLeft, Edit, Save, Eye, EyeOff, Plus, Download, Share } from "lucide-react";
 import { Button } from "./ui/button";
@@ -303,9 +302,9 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
   };
 
   return (
-    <div className="flex-1 bg-gray-50">
-      {/* Header */}
-      <div className="bg-gray-100 border-b border-gray-200 px-8 py-6">
+    <div className="flex-1 bg-gray-50 h-screen overflow-hidden">
+      {/* Fixed Header */}
+      <div className="fixed top-20 left-56 right-0 z-30 bg-gray-100 border-b border-gray-200 px-8 py-6">
         <div className="flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -344,10 +343,10 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
         </div>
       </div>
 
-      {/* Content */}
-      <div className="flex-1 flex pr-80">
+      {/* Content with top margin to account for fixed header */}
+      <div className="flex-1 flex pr-80 pt-[140px] h-full overflow-hidden">
         {/* Fixed Left Sidebar */}
-        <div className="w-80 bg-white border-r border-gray-200 p-6">
+        <div className="w-80 bg-white border-r border-gray-200 p-6 h-full overflow-y-auto">
           <Card className="border-0 shadow-none">
             <CardHeader className="px-0">
               <CardTitle className="text-lg">Research Overview</CardTitle>
@@ -389,8 +388,8 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
           </Card>
         </div>
 
-        {/* Main Content - Full Width */}
-        <div className="flex-1 p-6">
+        {/* Main Content - Full Width with scrolling */}
+        <div className="flex-1 p-6 h-full overflow-y-auto">
           <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
             {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 && (
               <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
@@ -446,7 +445,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                                   ))}
                                 </div>
                               </div>
-                              
+
                               <div>
                                 <h4 className="font-semibold mb-3">Competitive Advantages</h4>
                                 <ul className="space-y-1">
@@ -480,7 +479,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                                   <div className="text-sm text-gray-600">YoY Growth</div>
                                 </div>
                               </div>
-                              
+
                               <div>
                                 <h4 className="font-semibold mb-3">Regional Breakdown</h4>
                                 <div className="space-y-2">
@@ -510,7 +509,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                                   The content will be populated based on research findings and data analysis.
                                 </p>
                               </div>
-                              
+
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="border rounded-lg p-4">
                                   <h5 className="font-medium mb-2">Primary Data Points</h5>
@@ -520,7 +519,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                                     <div>• Data point 3</div>
                                   </div>
                                 </div>
-                                
+
                                 <div className="border rounded-lg p-4">
                                   <h5 className="font-medium mb-2">Analysis Summary</h5>
                                   <p className="text-sm text-gray-600">
@@ -586,7 +585,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
       </div>
 
       {/* Fixed AI Assistant Panel */}
-      <div className="fixed top-20 right-0 w-80 h-full bg-white border-l border-gray-200 z-10">
+      <div className="fixed top-[200px] right-0 w-80 h-[calc(100vh-200px)] bg-white border-l border-gray-200 z-10">
         <div className="p-6 h-full overflow-y-auto">
           <Card className="border-0 shadow-none">
             <CardHeader className="px-0 pb-4">
@@ -603,7 +602,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 <CardContent className="px-0 space-y-4">
               <div className="space-y-2">
                 <p className="text-sm text-gray-700 mb-3">Quick Actions:</p>
-                
+
                 <Button 
                   variant="outline" 
                   className="w-full justify-start text-sm h-9"
@@ -611,7 +610,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 >
                   📊 Generate Summary
                 </Button>
-                
+
                 <Button 
                   variant="outline" 
                   className="w-full justify-start text-sm h-9"
@@ -619,7 +618,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 >
                   💼 Financial Report
                 </Button>
-                
+
                 <Button 
                   variant="outline" 
                   className="w-full justify-start text-sm h-9"
@@ -627,7 +626,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 >
                   🏢 Competitor Analysis
                 </Button>
-                
+
                 <Button 
                   variant="outline" 
                   className="w-full justify-start text-sm h-9"
@@ -635,7 +634,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                 >
                   📈 Market Insights
                 </Button>
-                
+
                 <Button 
                   variant="outline" 
                   className="w-full justify-start text-sm h-9"
