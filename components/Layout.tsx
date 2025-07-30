@@ -1,5 +1,5 @@
 
-import { Search, Bell, Calendar, Settings, Home, Users, TrendingUp, Database, Brain, Target, Plus, User, LogOut, Cog } from "lucide-react";
+import { Search, Bell, Calendar, Settings, Home, Users, TrendingUp, Database, Brain, Target, Plus, User, LogOut, Cog, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import {
@@ -104,67 +104,42 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
 
         {/* Bottom Section */}
         <div className="p-4 border-t border-[#20308e]">
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-xs text-black font-medium">AI</span>
-            </div>
-            <div>
-              <p className="text-sm text-white">AI Assistant</p>
-              <p className="text-xs text-white/60">Ready to help</p>
-            </div>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-white/10">
+                <div className="flex items-center gap-3 w-full">
+                  <div className="w-7 h-7 bg-gray-300 rounded-full flex items-center justify-center">
+                    <span className="text-xs text-black font-medium">AI</span>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <p className="text-sm text-white">AI Assistant</p>
+                    <p className="text-xs text-white/60">Ready to help</p>
+                  </div>
+                  <ChevronDown className="w-4 h-4 text-white/60" />
+                </div>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 mb-2" align="end" side="top">
+              <DropdownMenuItem className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                <span>User Profile</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <Cog className="w-4 h-4" />
+                <span>Configuration</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="flex items-center gap-2 text-red-600">
+                <LogOut className="w-4 h-4" />
+                <span>Logout</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col ml-56">
-        {/* Top Navigation */}
-        <header className="bg-white border-b border-gray-200 px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h1 className="text-xl font-semibold text-gray-900">Dashboard</h1>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <Input
-                  type="search"
-                  placeholder="Search..."
-                  className="pl-10 w-64"
-                />
-              </div>
-              
-              {/* User Menu */}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="relative h-8 w-8 rounded-full">
-                    <div className="w-8 h-8 bg-[#504b95] rounded-full flex items-center justify-center">
-                      <span className="text-sm text-white font-medium">AI</span>
-                    </div>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuItem className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span>User Profile</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="flex items-center gap-2">
-                    <Cog className="w-4 h-4" />
-                    <span>Configuration</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem className="flex items-center gap-2 text-red-600">
-                    <LogOut className="w-4 h-4" />
-                    <span>Logout</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-          </div>
-        </header>
-        
         {children}
       </div>
     </div>
