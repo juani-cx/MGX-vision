@@ -89,21 +89,20 @@ export function ResearchForm({ onBack, onSubmit, initialData }: ResearchFormProp
   return (
     <div className="flex-1 bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-8 py-6">
+      <div className="bg-gray-100 border-b border-gray-200 px-8 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" onClick={onBack} className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Dashboard
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                {initialData ? "Edit Research Task" : "New Research Task"}
-              </h1>
-              <p className="text-sm text-gray-600">
-                Define the scope and focus areas for competitive and market research
-              </p>
+          <div>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <button onClick={onBack} className="hover:text-gray-900">Dashboard</button>
+              <span>/</span>
+              <span className="text-gray-900">{initialData ? "Edit Research Task" : "New Research Task"}</span>
             </div>
+            <h1 className="text-2xl font-bold text-gray-900">
+              {initialData ? "Edit Research Task" : "New Research Task"}
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">
+              Define the scope and focus areas for competitive and market research
+            </p>
           </div>
           <div className="flex items-center gap-2">
             <Button variant="outline" onClick={onBack}>

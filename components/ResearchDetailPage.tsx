@@ -303,9 +303,9 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
   };
 
   return (
-    <div className="flex-1 bg-gray-50 pr-80">
+    <div className="flex-1 bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-6 py-6">
+      <div className="bg-gray-100 border-b border-gray-200 px-8 py-6">
         <div className="flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -345,7 +345,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
       </div>
 
       {/* Content */}
-      <div className="flex-1 flex">
+      <div className="flex-1 flex pr-80">
         {/* Fixed Left Sidebar */}
         <div className="w-80 bg-white border-r border-gray-200 p-6">
           <Card className="border-0 shadow-none">
@@ -392,8 +392,9 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
         {/* Main Content - Full Width */}
         <div className="flex-1 p-6">
           <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
-                {(researchData.researchFocusAreas || []).slice(0, 6).map(area => (
+            {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 && (
+              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
+                {researchData.researchFocusAreas.slice(0, 6).map(area => (
                   <TabsTrigger
                     key={area}
                     value={area}
@@ -403,6 +404,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                   </TabsTrigger>
                 ))}
               </TabsList>
+            )}
 
               {(researchData.researchFocusAreas || []).map(area => {
                 const mockData = mockDataMap[area];
