@@ -1,0 +1,3468 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/wLight.module.css
+@import "https://fonts.googleapis.com/css?family=Inter:0,400;0,500;0,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Titillium+Web:0,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Inter:0,400;0,500;0,700&display=swap";
+.wLight_15_4165 {
+  background: #fff;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.BackgroundVerticalBorder_15_4166 {
+  box-sizing: border-box;
+  background: #0f1951;
+  border-right: 1px solid #e5e5e5;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  width: 224px;
+  padding-right: 1px;
+  display: flex;
+}
+.HorizontalBorder_15_4167 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 21px 0 22px;
+  display: flex;
+}
+.Container_15_4773 {
+  aspect-ratio: 125/77;
+  background: #d3d3d3 url(<path-to-image>) 0 0/100% 100% no-repeat;
+  width: 125px;
+  height: 77px;
+}
+.Container_15_4174 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  gap: 21px;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+}
+.Container_15_4175 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  width: 100%;
+  display: flex;
+}
+.Heading_3_15_4176 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 7px;
+  display: flex;
+}
+.MainMenu_15_4177 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 10.008px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+.Container_15_4178 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  padding: 1px 0;
+  display: flex;
+}
+.Container_15_4179 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 195px;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Svg_15_4180 {
+  flex-flow: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 2.33333px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Container_15_4183 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Notifications_15_4184 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.147px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Margin_15_4185 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-end;
+  width: 100%;
+  min-width: 28.31px;
+  padding-left: 58.219px;
+  display: flex;
+}
+.Background_15_4186 {
+  background: #e3982f;
+  border-radius: 3.5px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.75px 5.25px;
+  display: flex;
+}
+.generated_99_15_4187 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 9.352px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+.Container_15_4188 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 195px;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Svg_15_4189 {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+.Container_15_4194 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Calendar_15_4195 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.531px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4196 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 195px;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Svg_15_4197 {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+.Container_15_4200 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Settings_15_4201 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.339px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4210 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  width: 100%;
+  display: flex;
+}
+.Heading_3_15_4211 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 7px;
+  display: flex;
+}
+.MainPages_15_4212 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 9.844px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+.Container_15_4213 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.5px;
+  width: 100%;
+  display: flex;
+}
+.Background_15_4214 {
+  background: #504b95;
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4215 {
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4216 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4219 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Dashboard_15_4220 {
+  color: #fafafa;
+  font-family: Inter;
+  font-size: 11.531px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4221 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4222 {
+  background: #030213;
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4223 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4233 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.AiResearch_15_4234 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.916px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4235 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4236 {
+  background: #030213;
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4237 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4242 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.ClientNetwork_15_4243 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.339px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4244 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4245 {
+  background: #030213;
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4246 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4249 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Analytics_15_4250 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.339px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4251 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4252 {
+  background: #030213;
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4253 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4257 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.DataSources_15_4258 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.531px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4259 {
+  border-radius: 8.75px;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 6px 7px 7px;
+  display: flex;
+}
+.Background_15_4260 {
+  background: #030213;
+  border-radius: 3.5px;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Svg_15_4261 {
+  flex-shrink: 0;
+  width: 10.5px;
+  height: 10.5px;
+}
+.Container_15_4265 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.InvestmentTargets_15_4266 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.339px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Button_15_4267 {
+  border-radius: 6.75px;
+  align-items: center;
+  width: 100%;
+  height: 28px;
+  padding: 4.25px 10.5px 5.75px;
+  display: flex;
+}
+.CreateNew_15_4268 {
+  color: #fff;
+  text-align: center;
+  flex: 1 0 0;
+  font-family: Inter;
+  font-size: 11.339px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.HorizontalBorder_15_4269 {
+  box-sizing: border-box;
+  border-top: 1px solid #20308e;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+}
+.Container_15_4270 {
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  display: flex;
+}
+.Background_15_4271 {
+  background: #ececf0;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  display: flex;
+}
+.Container_15_4272 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Ai_15_4273 {
+  color: #0a0a0a;
+  font-family: Inter;
+  font-size: 10.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+.Container_15_4274 {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+.Container_15_4275 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.AiAssistant_15_4276 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 11.531px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17.5px;
+  display: inline-block;
+}
+.Container_15_4277 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.ReadyToHelp_15_4278 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 9.844px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  display: inline-block;
+}
+.Container_15_4279 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.HorizontalBorder_15_4280 {
+  box-sizing: border-box;
+  border-bottom: 1px solid #0000001a;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 21px;
+  display: flex;
+}
+.Container_15_4281 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Frame_1_15_4282 {
+  align-items: center;
+  gap: 24px;
+  width: 918.29px;
+  display: flex;
+}
+.Container_15_4283 {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  width: 493px;
+  height: 31.5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.Input_15_4284 {
+  background: #fff;
+  border-radius: 6.75px;
+  width: 280px;
+  height: 31.5px;
+  overflow: hidden;
+}
+.Container_15_4285 {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  height: 14px;
+  padding: 1px 124.56px 1px 0;
+  display: inline-flex;
+  overflow: hidden;
+}
+.SearchCompanies_15_4286 {
+  color: #717182;
+  font-family: Inter;
+  font-size: 11.723px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: inline-block;
+}
+.Container_15_4287 {
+  flex-shrink: 0;
+  width: 236px;
+  height: 14px;
+  overflow: hidden;
+}
+.Svg_15_4288 {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 8.75px;
+  left: 10.5px;
+}
+.Container_15_4291 {
+  align-items: center;
+  gap: 10.5px;
+  display: flex;
+}
+.Container_15_4292 {
+  align-items: center;
+  gap: var(--item-spacing-0, 0);
+  display: flex;
+}
+.Margin_15_4293 {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 14px;
+  display: flex;
+}
+.Border_15_4294 {
+  justify-content: center;
+  align-items: center;
+  gap: var(--item-spacing-3_5, 3.5px);
+  border: var(--stroke-weight-1, 1px) solid
+    var(--color-spring-green-85, #b9f8cf);
+  box-sizing: border-box;
+  border-radius: 6.75px;
+  height: 19.5px;
+  padding: 2.75px 8px;
+  display: flex;
+  overflow: hidden;
+}
+.SvgMargin_15_4295 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 14px;
+  height: 10.5px;
+  padding-right: 3.5px;
+  display: flex;
+}
+.Svg_15_4296 {
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 10.5px;
+  height: 10.5px;
+  display: flex;
+  overflow: hidden;
+}
+.Frame_15_4297 {
+  flex: 1 0 0;
+  width: 10.5px;
+}
+.AllSystemsOperational_15_4300 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-green-haze,
+    var(--color-spring-green-33, #00a63e)
+  );
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 9.844px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-14, 14px);
+  display: inline-block;
+}
+.Profile_15_4301 {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+.Frame_5518_15_4302 {
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  align-items: flex-start;
+  gap: 8px;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  display: flex;
+}
+.Container_15_4308 {
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Content_15_4309 {
+  flex-direction: column;
+  flex: 1 0 0;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.HeaderSectionHeader_15_4310 {
+  border-bottom: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  box-sizing: border-box;
+  background: #f4f6fa;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  padding: 24px 32px;
+  display: flex;
+}
+.Frame_47627_15_5446 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Frame_47626_15_5411 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+.Frame_47625_15_5390 {
+  align-items: center;
+  gap: 5px;
+  display: flex;
+}
+.MynauiHome_15_5386 {
+  aspect-ratio: 1;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.Group_15_5387 {
+  flex-shrink: 0;
+  width: 10.667px;
+  height: 12px;
+}
+.HomePage_15_4311 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  display: inline-block;
+}
+.ActivitySummary_15_4312 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  font-family: Titillium Web;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  display: inline-block;
+}
+.Frame_47623_15_4313 {
+  align-items: center;
+  gap: 220px;
+  display: flex;
+}
+.Action_15_4371 {
+  background: #0f1951;
+  border-radius: 8px;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Buttons_15_4372 {
+  border-radius: var(--Border-Radius-4-px, 4px);
+  border: 1px solid var(--Color-Tokens-Action-Outline-Base, #000);
+  background: var(--Color-Tokens-Action-Secondary-Base, #fff);
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  display: flex;
+}
+.Buttons_15_4382 {
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  display: flex;
+}
+.IconPlus_15_4383 {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.NewResearch_15_4386 {
+  color: var(--Color-Tokens-Content-Light-Primary, #fff);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.IconPlus_15_4387 {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.Container_15_5412 {
+  background: #fff;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 1632px;
+  height: 121.815px;
+  padding-bottom: 16px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 20px #0000001a;
+}
+.HorizontalBorder_15_5413 {
+  border-bottom: var(--stroke-weight-1, 1px) solid
+    var(--color-black-10, #0000001a);
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 13px 14px 8px;
+  display: flex;
+}
+.Container_15_5414 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Heading_2_15_5417 {
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+}
+.Background_15_5434 {
+  background: var(--color-grey-93, #dcfce7);
+  border-radius: 33554400px;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  display: flex;
+}
+.Svg_15_5435 {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+.AiAssistant_15_5418 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-cod-gray,
+    var(--color-grey-4, #0a0a0a)
+  );
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.306px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-24_5, 24.5px);
+  display: inline-block;
+}
+.Container_15_5421 {
+  align-items: center;
+  gap: var(--item-spacing--0_01, -0.01px);
+  display: flex;
+}
+.Margin_15_5422 {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 7px;
+  display: flex;
+}
+.Background_15_5423 {
+  background: var(--color-grey-94, #ffe2e2);
+  border-radius: 6.75px;
+  justify-content: center;
+  align-items: center;
+  height: 19.5px;
+  padding: 2.75px 8px;
+  display: flex;
+  overflow: hidden;
+}
+.AlwaysOn_15_5424 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-jaguar,
+    var(--color-blue-4, #030213)
+  );
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 9.68px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-14, 14px);
+  display: inline-block;
+}
+.Button_15_5425 {
+  border-radius: 6.75px;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  padding: 0 8.75px;
+  display: flex;
+}
+.Svg_15_5426 {
+  flex-flow: row;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.91667px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Container_15_5430 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 40.815px;
+  padding: 0 14px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_15_5442 {
+  align-items: flex-start;
+  gap: var(--item-spacing-3_5, 3.5px);
+  flex-direction: column;
+  width: 100%;
+  height: 40.815px;
+  display: flex;
+}
+.Background_15_5443 {
+  background: #f4f4f4;
+  border-radius: 8.75px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 9.455px 10.5px 10.5px;
+  display: flex;
+}
+.Paragraph_15_5444 {
+  align-items: flex-start;
+  gap: var(--item-spacing-19_6, 19.6px);
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 0.86px;
+  display: flex;
+}
+.AskeMeAboutAnyCompanyOrContact_15_5445 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-cod-gray,
+    var(--color-grey-4, #0a0a0a)
+  );
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 11.147px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-19_91, 19.91px);
+  display: inline-block;
+}
+.Content_15_4390 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+}
+.Planned_15_4391 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Frame_47624_15_4392 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 16px;
+  display: flex;
+}
+.Title_15_4393,
+.Content_15_4394 {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+.Ellipse_817_15_4395 {
+  fill: #ffcd2e;
+  width: 12px;
+  height: 12px;
+}
+.Content_15_4396 {
+  align-items: flex-end;
+  gap: 8px;
+  display: flex;
+}
+.ActiveResearchs_15_4397 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: inline-block;
+}
+.CompaniesListed_15_4398 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  display: inline-block;
+}
+.Buttons_15_4399 {
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  display: flex;
+}
+.IconFunnelSimple_15_4400 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+}
+.SortBy_15_4404 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.IconFunnelSimple_15_4405 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 16px;
+  height: 16px;
+  padding: 5px 1.5px;
+  display: flex;
+}
+.Content_15_4409 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  display: flex;
+}
+.List_15_4410 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  box-sizing: border-box;
+  background: #f4f6fa;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4411 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4412 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4413 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BigKahunaBurgerLtd_15_4414 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4415 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4416 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4417 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_24Jan_2023_15_4425 {
+  color: #282828;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4426 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4427 {
+  background: var(--Color-Tokens-Background-Orange, #fbf4ec);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4428 {
+  color: var(--Color-Tokens-Interaction-Orange-Base, #d28e3d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4429 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4433 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4434 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4435 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4439 {
+  background: var(--Color-Tokens-Background-Red, #f7eded);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4440 {
+  color: var(--Color-Tokens-Interaction-Red-Base, #af4b4b);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4441 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4445 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4446,
+.Frame_5521_15_4447,
+.Frame_5519_15_4448,
+.Frame_5520_15_4449 {
+  border: 2px solid var(--Color-Tokens-Content-Light-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4450 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4454 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4455 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4456 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4457 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.AcmeCo_15_4458 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4459 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4460 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4461 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_18Jan_2023_15_4469 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4470 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4471 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4472 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4473 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4477 {
+  background: var(--Color-Tokens-Background-Purple, #f4edf7);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4478 {
+  color: var(--Color-Tokens-Interaction-Purple-Base, #954baf);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4479 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4483 {
+  background: var(--Color-Tokens-Background-Red, #f7eded);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4484 {
+  color: var(--Color-Tokens-Interaction-Red-Base, #af4b4b);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4485 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4489 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4490 {
+  border: 2px solid var(--Color-Tokens-Content-Light-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5521_15_4491,
+.Frame_5519_15_4492,
+.Frame_5520_15_4493 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4494 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4498 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4499 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4500 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4501 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BinfordLtd_15_4502 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4503 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4504 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4505 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_31Jan_2023_15_4513 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4514 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4515 {
+  background: var(--Color-Tokens-Background-Orange, #fbf4ec);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4516 {
+  color: var(--Color-Tokens-Interaction-Orange-Base, #d28e3d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4517 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4521 {
+  background: var(--Color-Tokens-Background-Blue, #edf2fe);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4522 {
+  color: var(--Color-Tokens-Interaction-Blue-Base, #4976f4);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4523 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4527 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4528 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4529 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4533 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4534,
+.Frame_5521_15_4535,
+.Frame_5519_15_4536,
+.Frame_5520_15_4537 {
+  border: 2px solid var(--Color-Tokens-Content-Light-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4538 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.Upcoming_15_4542 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  display: flex;
+}
+.Title_15_4543 {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+.CaretUp_15_4544 {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.Content_15_4546 {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+.Ellipse_817_15_4547 {
+  fill: var(--GlobalColors-Blue-60, #4976f4);
+  width: 12px;
+  height: 12px;
+}
+.Content_15_4548 {
+  align-items: flex-end;
+  gap: 8px;
+  display: flex;
+}
+.LatestAnalysis_15_4549 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: inline-block;
+}
+.CompaniesListed_15_4550 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%;
+  display: inline-block;
+}
+.Content_15_4551 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  display: flex;
+}
+.List_15_4552 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4553 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4554 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4555 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BinfordLtd_15_4556 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4557 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4558 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4559 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_11Jan_2023_15_4567 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4568 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4569 {
+  background: var(--Color-Tokens-Background-Green, #eef5f0);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4570 {
+  color: var(--Color-Tokens-Interaction-Green-Base, #589e67);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4571 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4575 {
+  background: var(--Color-Tokens-Background-Purple, #f4edf7);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4576 {
+  color: var(--Color-Tokens-Interaction-Purple-Base, #954baf);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4577 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4581 {
+  background: var(--Color-Tokens-Background-Red, #f7eded);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4582 {
+  color: var(--Color-Tokens-Interaction-Red-Base, #af4b4b);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4583 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4587 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4588,
+.Frame_5521_15_4589 {
+  border: 2px solid var(--Color-Tokens-Content-Light-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5519_15_4590,
+.Frame_5520_15_4591 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4592 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4596 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4597 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4598 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4599 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BaroneLlc_15_4600 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4601 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4602 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4603 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_09Jan_2023_15_4611 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4612 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4613 {
+  background: var(--Color-Tokens-Background-Green, #eef5f0);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4614 {
+  color: var(--Color-Tokens-Interaction-Green-Base, #589e67);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4615 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4619 {
+  background: var(--Color-Tokens-Background-Blue, #edf2fe);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4620 {
+  color: var(--Color-Tokens-Interaction-Blue-Base, #4976f4);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4621 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4625 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4626 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4627 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4631 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4632 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5521_15_4633 {
+  border: 2px solid var(--Color-Tokens-Content-Light-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5519_15_4634,
+.Frame_5520_15_4635 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4636 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4640 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4641 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4642 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4643 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BinfordLtd_15_4644 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4645 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4646 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4647 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_12Jan_2023_15_4655 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4656 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4657 {
+  background: var(--Color-Tokens-Background-Orange, #fbf4ec);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4658 {
+  color: var(--Color-Tokens-Interaction-Orange-Base, #d28e3d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4659 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4663 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4664 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4665 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4669 {
+  background: var(--Color-Tokens-Background-Red, #f7eded);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4670 {
+  color: var(--Color-Tokens-Interaction-Red-Base, #af4b4b);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4671 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4675 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4676,
+.Frame_5521_15_4677,
+.Frame_5519_15_4678,
+.Frame_5520_15_4679 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4680 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4684 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4685 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4686 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4687 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.AbstergoLtd_15_4688 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4689 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4690 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4691 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_15Jan_2023_15_4699 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4700 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4701 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4702 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4703 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4707 {
+  background: var(--Color-Tokens-Background-Purple, #f4edf7);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4708 {
+  color: var(--Color-Tokens-Interaction-Purple-Base, #954baf);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4709 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4713 {
+  background: var(--Color-Tokens-Background-Red, #f7eded);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4714 {
+  color: var(--Color-Tokens-Interaction-Red-Base, #af4b4b);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4715 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4719 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4720 {
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border: 2px solid #fff;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5521_15_4721,
+.Frame_5519_15_4722,
+.Frame_5520_15_4723 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4724 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.List_15_4728 {
+  border: 1px solid var(--Color-Tokens-Border-Primary, #e4e4e4);
+  background: var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+}
+.Content_15_4729 {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.Checkbox_15_4730 {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.RoundedRectangle_15_4731 {
+  border: 1px solid var(--Color-Tokens-Interaction-Outline-Base, #afafaf);
+  background: var(--Color-Tokens-Interaction-Secondary-Base, #fff);
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 18.333px;
+  height: 18.333px;
+}
+.BiffcoEnterprisesLtd_15_4732 {
+  color: var(--Color-Tokens-Content-Dark-Primary, #000);
+  width: 460px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: inline-block;
+}
+.Content_15_4733 {
+  flex: 1 0 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Date_15_4734 {
+  align-items: center;
+  gap: 8px;
+  width: 196px;
+  display: flex;
+}
+.IconCalendar_15_4735 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+.DueDate_13Jan_2023_15_4743 {
+  color: var(--Color-Tokens-Content-Dark-Secondary, #727272);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  display: inline-block;
+}
+.Badge_15_4744 {
+  align-items: flex-start;
+  gap: 9px;
+  width: 240px;
+  display: flex;
+}
+.Badge_15_4745 {
+  background: var(--Color-Tokens-Background-Orange, #fbf4ec);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4746 {
+  color: var(--Color-Tokens-Interaction-Orange-Base, #d28e3d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4747 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4751 {
+  background: var(--Color-Tokens-Background-Blue, #edf2fe);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4752 {
+  color: var(--Color-Tokens-Interaction-Blue-Base, #4976f4);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4753 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Badge_15_4757 {
+  background: var(--Color-Tokens-Background-Yellow, #f7f7e8);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  display: flex;
+}
+.Badge_15_4758 {
+  color: var(--Color-Tokens-Interaction-Yellow-Base, #b1ab1d);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+}
+.IconCancel_15_4759 {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 2.833px 2.834px 2.833px 2.833px;
+  display: flex;
+}
+.Member_15_4763 {
+  justify-content: flex-end;
+  align-items: center;
+  gap: -12px;
+  width: 76px;
+  display: flex;
+}
+.Frame_5518_15_4764,
+.Frame_5521_15_4765 {
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border: 2px solid #fff;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.Frame_5519_15_4766,
+.Frame_5520_15_4767 {
+  border: 2px solid var(--Color-Tokens-Background-Primary, #fff);
+  box-sizing: border-box;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  border-radius: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 28px;
+  height: 28px;
+  padding: 8px;
+  display: flex;
+}
+.IconDotsThreeVertical_15_4768 {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3.4375px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+.Container_15_5447 {
+  background: #fff;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 410px;
+  height: 135.815px;
+  padding-bottom: 16px;
+  display: flex;
+  position: absolute;
+  bottom: 31.815px;
+  right: 32px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px #00000026;
+}
+.HorizontalBorder_15_5448 {
+  border-bottom: var(--stroke-weight-1, 1px) solid #f4f6fa;
+  box-sizing: border-box;
+  background: #f4f6fa;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 13px 14px 8px;
+  display: flex;
+}
+.Container_15_5449 {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Container_15_5450 {
+  align-items: center;
+  display: flex;
+}
+.Container_15_5451 {
+  align-items: flex-start;
+  gap: var(--item-spacing--1, -1px);
+  flex-direction: column;
+  display: flex;
+}
+.Heading_2_15_5452 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.AiAssistant_15_5453 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-cod-gray,
+    var(--color-grey-4, #0a0a0a)
+  );
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.306px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-24_5, 24.5px);
+  display: inline-block;
+}
+.Container_15_5454 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.AskMeAnything_15_5455 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-storm-gray,
+    var(--color-grey-48, #717182)
+  );
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 11.147px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-17_5, 17.5px);
+  display: inline-block;
+}
+.Container_15_5456 {
+  align-items: center;
+  gap: var(--item-spacing--0_01, -0.01px);
+  display: flex;
+}
+.Button_15_5460 {
+  border-radius: 6.75px;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  padding: 0 8.75px;
+  display: flex;
+}
+.Svg_15_5461 {
+  flex-flow: row;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.91667px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+}
+.Container_15_5465 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 40.815px;
+  padding: 0 14px;
+  display: flex;
+  overflow: hidden;
+}
+.Container_15_5466 {
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Margin_15_5467 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 38.5px;
+  height: 28px;
+  padding-right: 10.5px;
+  display: flex;
+}
+.Container_15_5468 {
+  border-radius: 33554400px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: flex-start;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  overflow: hidden;
+}
+.Background_15_5469 {
+  background: var(--color-grey-93, #dcfce7);
+  border-radius: 33554400px;
+  flex: 1 0 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.Svg_15_5470 {
+  width: 14px;
+  height: 14px;
+}
+.Container_15_5477 {
+  align-items: flex-start;
+  gap: var(--item-spacing-3_5, 3.5px);
+  flex-direction: column;
+  flex: 1 0 0;
+  width: 100%;
+  display: flex;
+}
+.Background_15_5478 {
+  background: #f4f4f4;
+  border-radius: 8.75px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 9.455px 10.5px 10.5px;
+  display: flex;
+}
+.Paragraph_15_5479 {
+  align-items: flex-start;
+  gap: var(--item-spacing-19_6, 19.6px);
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 0.86px;
+  display: flex;
+}
+.AskMeAboutAnyCompanyOrContact_15_5480 {
+  color: var(
+    --58-dddb-9-d-71-e-34093-ab-07-e-2-db-3-c-49406-f-003-bhj-21-alifgto-riker-replit-dev-cod-gray,
+    var(--color-grey-4, #0a0a0a)
+  );
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 11.147px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-19_91, 19.91px);
+  display: inline-block;
+}
+
+```
+
+---
+
+```src/components/wLight.tsx
+import React from 'react';
+import styles from '../styles/wLight.module.css';
+
+
+export default function wLight() {
+  return (
+    <div className={styles.wLight_15_4165}>
+      <div className={styles.BackgroundVerticalBorder_15_4166}>
+        <div className={styles.HorizontalBorder_15_4167}>
+          <div className={styles.Container_15_4773}></div>
+        </div>
+        <div className={styles.Container_15_4174}>
+          <div className={styles.Container_15_4175}>
+            <div className={styles.Heading_3_15_4176}><span className={styles.MainMenu_15_4177}>Main menu</span></div>
+            <div className={styles.Container_15_4178}>
+              <div className={styles.Container_15_4179}>
+                <div className={styles.Svg_15_4180}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.98969 12.25C6.09209 12.4273 6.23936 12.5746 6.41671 12.677C6.59406 12.7794 6.79524 12.8333 7.00002 12.8333C7.2048 12.8333 7.40598 12.7794 7.58333 12.677C7.76068 12.5746 7.90795 12.4273 8.01035 12.25" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1.90283 8.94C1.82663 9.02353 1.77634 9.12739 1.75808 9.23897C1.73983 9.35055 1.75439 9.46503 1.8 9.56849C1.84561 9.67194 1.9203 9.75991 2.01498 9.8217C2.10967 9.88348 2.22027 9.91642 2.33333 9.9165H11.6667C11.7797 9.91654 11.8903 9.88373 11.9851 9.82207C12.0798 9.7604 12.1546 9.67252 12.2004 9.56914C12.2461 9.46575 12.2608 9.3513 12.2427 9.23971C12.2246 9.12812 12.1744 9.0242 12.0983 8.94059C11.3225 8.14084 10.5 7.29092 10.5 4.6665C10.5 3.73825 10.1313 2.84801 9.47488 2.19163C8.8185 1.53525 7.92826 1.1665 7 1.1665C6.07174 1.1665 5.1815 1.53525 4.52513 2.19163C3.86875 2.84801 3.5 3.73825 3.5 4.6665C3.5 7.29092 2.67692 8.14084 1.90283 8.94Z" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div className={styles.Container_15_4183}><span className={styles.Notifications_15_4184}>Notifications</span></div>
+                <div className={styles.Margin_15_4185}>
+                  <div className={styles.Background_15_4186}><span className={styles.generated_99_15_4187}>99+</span></div>
+                </div>
+              </div>
+              <div className={styles.Container_15_4188}>
+                <div className={styles.Svg_15_4189}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.66669 1.1665V3.49984" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9.33331 1.1665V3.49984" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M11.0833 2.3335H2.91667C2.27233 2.3335 1.75 2.85583 1.75 3.50016V11.6668C1.75 12.3112 2.27233 12.8335 2.91667 12.8335H11.0833C11.7277 12.8335 12.25 12.3112 12.25 11.6668V3.50016C12.25 2.85583 11.7277 2.3335 11.0833 2.3335Z" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1.75 5.8335H12.25" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div className={styles.Container_15_4194}><span className={styles.Calendar_15_4195}>Calendar</span></div>
+              </div>
+              <div className={styles.Container_15_4196}>
+                <div className={styles.Svg_15_4197}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.12833 1.1665H6.87167C6.56225 1.1665 6.2655 1.28942 6.04671 1.50821C5.82792 1.72701 5.705 2.02375 5.705 2.33317V2.43817C5.70479 2.64276 5.65078 2.8437 5.5484 3.02083C5.44601 3.19795 5.29885 3.34504 5.12167 3.44734L4.87083 3.59317C4.69348 3.69557 4.49229 3.74947 4.2875 3.74947C4.08271 3.74947 3.88152 3.69557 3.70417 3.59317L3.61667 3.5465C3.34896 3.39207 3.03091 3.35018 2.73234 3.43002C2.43377 3.50985 2.17907 3.7049 2.02417 3.97234L1.89583 4.194C1.7414 4.46172 1.69951 4.77977 1.77935 5.07834C1.85918 5.37691 2.05423 5.6316 2.32167 5.7865L2.40917 5.84484C2.5855 5.94664 2.73211 6.09281 2.83445 6.26882C2.93678 6.44484 2.99127 6.64457 2.9925 6.84817V7.14567C2.99332 7.35125 2.9398 7.55339 2.83736 7.73163C2.73492 7.90987 2.58721 8.05788 2.40917 8.16067L2.32167 8.21317C2.05423 8.36808 1.85918 8.62277 1.77935 8.92134C1.69951 9.21991 1.7414 9.53796 1.89583 9.80567L2.02417 10.0273C2.17907 10.2948 2.43377 10.4898 2.73234 10.5697C3.03091 10.6495 3.34896 10.6076 3.61667 10.4532L3.70417 10.4065C3.88152 10.3041 4.08271 10.2502 4.2875 10.2502C4.49229 10.2502 4.69348 10.3041 4.87083 10.4065L5.12167 10.5523C5.29885 10.6546 5.44601 10.8017 5.5484 10.9788C5.65078 11.156 5.70479 11.3569 5.705 11.5615V11.6665C5.705 11.9759 5.82792 12.2727 6.04671 12.4915C6.2655 12.7103 6.56225 12.8332 6.87167 12.8332H7.12833C7.43775 12.8332 7.7345 12.7103 7.95329 12.4915C8.17208 12.2727 8.295 11.9759 8.295 11.6665V11.5615C8.29521 11.3569 8.34922 11.156 8.4516 10.9788C8.55399 10.8017 8.70115 10.6546 8.87833 10.5523L9.12917 10.4065C9.30652 10.3041 9.50771 10.2502 9.7125 10.2502C9.91729 10.2502 10.1185 10.3041 10.2958 10.4065L10.3833 10.4532C10.651 10.6076 10.9691 10.6495 11.2677 10.5697C11.5662 10.4898 11.8209 10.2948 11.9758 10.0273L12.1042 9.79984C12.2586 9.53212 12.3005 9.21407 12.2207 8.9155C12.1408 8.61693 11.9458 8.36224 11.6783 8.20734L11.5908 8.16067C11.4128 8.05788 11.2651 7.90987 11.1626 7.73163C11.0602 7.55339 11.0067 7.35125 11.0075 7.14567V6.854C11.0067 6.64843 11.0602 6.44628 11.1626 6.26804C11.2651 6.0898 11.4128 5.94179 11.5908 5.839L11.6783 5.7865C11.9458 5.6316 12.1408 5.37691 12.2207 5.07834C12.3005 4.77977 12.2586 4.46172 12.1042 4.194L11.9758 3.97234C11.8209 3.7049 11.5662 3.50985 11.2677 3.43002C10.9691 3.35018 10.651 3.39207 10.3833 3.5465L10.2958 3.59317C10.1185 3.69557 9.91729 3.74947 9.7125 3.74947C9.50771 3.74947 9.30652 3.69557 9.12917 3.59317L8.87833 3.44734C8.70115 3.34504 8.55399 3.19795 8.4516 3.02083C8.34922 2.8437 8.29521 2.64276 8.295 2.43817V2.33317C8.295 2.02375 8.17208 1.72701 7.95329 1.50821C7.7345 1.28942 7.43775 1.1665 7.12833 1.1665Z" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M7 8.75C7.9665 8.75 8.75 7.9665 8.75 7C8.75 6.0335 7.9665 5.25 7 5.25C6.0335 5.25 5.25 6.0335 5.25 7C5.25 7.9665 6.0335 8.75 7 8.75Z" stroke="white" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div className={styles.Container_15_4200}><span className={styles.Settings_15_4201}>Settings</span></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.Container_15_4210}>
+            <div className={styles.Heading_3_15_4211}><span className={styles.MainPages_15_4212}>Main pages</span></div>
+            <div className={styles.Container_15_4213}>
+              <div className={styles.Background_15_4214}>
+                <div className={styles.Background_15_4215}>
+                  <div className={styles.Svg_15_4216}><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.3125 9.9375V6.4375C7.3125 6.32147 7.26641 6.21019 7.18436 6.12814C7.10231 6.04609 6.99103 6 6.875 6H5.125C5.00897 6 4.89769 6.04609 4.81564 6.12814C4.73359 6.21019 4.6875 6.32147 4.6875 6.4375V9.9375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2.0625 5.12477C2.06247 4.99749 2.09021 4.87173 2.14378 4.75627C2.19736 4.64081 2.27547 4.53843 2.37269 4.45627L5.43519 1.83171C5.59312 1.69823 5.79322 1.625 6 1.625C6.20678 1.625 6.40688 1.69823 6.56481 1.83171L9.62731 4.45627C9.72453 4.53843 9.80264 4.64081 9.85622 4.75627C9.90979 4.87173 9.93753 4.99749 9.9375 5.12477V9.06227C9.9375 9.29434 9.84531 9.5169 9.68122 9.68099C9.51712 9.84508 9.29456 9.93727 9.0625 9.93727H2.9375C2.70544 9.93727 2.48288 9.84508 2.31878 9.68099C2.15469 9.5169 2.0625 9.29434 2.0625 9.06227V5.12477Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4219}><span className={styles.Dashboard_15_4220}>Dashboard</span></div>
+              </div>
+              <div className={styles.Container_15_4221}>
+                <div className={styles.Background_15_4222}>
+                  <div className={styles.Svg_15_4223}><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.99999 2.43746C6.0005 2.26247 5.96602 2.08915 5.89857 1.92769C5.83112 1.76622 5.73207 1.61987 5.60723 1.49725C5.48239 1.37463 5.3343 1.27821 5.17165 1.21366C5.009 1.14911 4.83509 1.11773 4.66014 1.12138C4.48519 1.12503 4.31274 1.16362 4.15292 1.23489C3.99311 1.30616 3.84916 1.40867 3.72954 1.53639C3.60992 1.66411 3.51705 1.81445 3.45638 1.97859C3.39572 2.14273 3.36849 2.31734 3.3763 2.49215C3.11914 2.55827 2.88039 2.68205 2.67815 2.8541C2.47591 3.02615 2.31547 3.24197 2.20898 3.48521C2.1025 3.72845 2.05276 3.99273 2.06353 4.25804C2.07431 4.52334 2.14531 4.78272 2.27117 5.01652C2.04988 5.19631 1.87586 5.42744 1.76426 5.68981C1.65266 5.95218 1.60686 6.23784 1.63083 6.52196C1.65481 6.80607 1.74784 7.08001 1.90184 7.31997C2.05583 7.55993 2.26613 7.75862 2.51442 7.89877C2.48376 8.136 2.50206 8.377 2.56819 8.60688C2.63431 8.83676 2.74687 9.05064 2.89889 9.23532C3.05092 9.41999 3.23919 9.57154 3.45208 9.68061C3.66497 9.78967 3.89796 9.85393 4.13666 9.86942C4.37536 9.88491 4.6147 9.8513 4.83991 9.77067C5.06511 9.69003 5.27139 9.56409 5.44601 9.40061C5.62063 9.23713 5.75988 9.03958 5.85516 8.82018C5.95044 8.60077 5.99973 8.36416 5.99999 8.12496V2.43746Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M6.00001 2.43746C5.99949 2.26247 6.03397 2.08915 6.10142 1.92769C6.16887 1.76622 6.26793 1.61987 6.39276 1.49725C6.5176 1.37463 6.6657 1.27821 6.82834 1.21366C6.99099 1.14911 7.1649 1.11773 7.33985 1.12138C7.5148 1.12503 7.68725 1.16362 7.84707 1.23489C8.00689 1.30616 8.15084 1.40867 8.27045 1.53639C8.39007 1.66411 8.48295 1.81445 8.54361 1.97859C8.60427 2.14273 8.6315 2.31734 8.62369 2.49215C8.88085 2.55827 9.1196 2.68205 9.32184 2.8541C9.52409 3.02615 9.68453 3.24197 9.79101 3.48521C9.8975 3.72845 9.94724 3.99273 9.93646 4.25804C9.92569 4.52334 9.85468 4.78272 9.72882 5.01652C9.95011 5.19631 10.1241 5.42744 10.2357 5.68981C10.3473 5.95218 10.3931 6.23784 10.3692 6.52196C10.3452 6.80607 10.2521 7.08001 10.0982 7.31997C9.94416 7.55993 9.73386 7.75862 9.48557 7.89877C9.51623 8.136 9.49793 8.377 9.4318 8.60688C9.36568 8.83676 9.25313 9.05064 9.1011 9.23532C8.94907 9.41999 8.7608 9.57154 8.54791 9.68061C8.33502 9.78967 8.10203 9.85393 7.86333 9.86942C7.62463 9.88491 7.38529 9.8513 7.16009 9.77067C6.93489 9.69003 6.7286 9.56409 6.55399 9.40061C6.37937 9.23713 6.24012 9.03958 6.14483 8.82018C6.04955 8.60077 6.00026 8.36416 6.00001 8.12496V2.43746Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M7.3125 5.9375C6.94519 5.80829 6.62445 5.57306 6.39083 5.26156C6.15721 4.95007 6.0212 4.57629 6 4.1875C5.9788 4.57629 5.84279 4.95007 5.60917 5.26156C5.37555 5.57306 5.05481 5.80829 4.6875 5.9375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M8.44958 3.09375C8.55547 2.91026 8.61536 2.70386 8.62415 2.49219" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3.37634 2.49219C3.38499 2.70382 3.44474 2.91022 3.55047 3.09375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2.27118 5.017C2.35122 4.95181 2.43686 4.89384 2.52712 4.84375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M9.4729 4.84375C9.56316 4.89384 9.6488 4.95181 9.72884 5.017" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3.37503 8.12516C3.07352 8.12531 2.77708 8.04754 2.51447 7.89941" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M9.48556 7.89941C9.22295 8.04754 8.92651 8.12531 8.625 8.12516" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4233}><span className={styles.AiResearch_15_4234}>AI Research</span></div>
+              </div>
+              <div className={styles.Container_15_4235}>
+                <div className={styles.Background_15_4236}>
+                  <div className={styles.Svg_15_4237}><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 9.9375V9.0625C7.75 8.59837 7.56563 8.15325 7.23744 7.82506C6.90925 7.49687 6.46413 7.3125 6 7.3125H3.375C2.91087 7.3125 2.46575 7.49687 2.13756 7.82506C1.80937 8.15325 1.625 8.59837 1.625 9.0625V9.9375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4.6875 5.5625C5.654 5.5625 6.4375 4.779 6.4375 3.8125C6.4375 2.846 5.654 2.0625 4.6875 2.0625C3.721 2.0625 2.9375 2.846 2.9375 3.8125C2.9375 4.779 3.721 5.5625 4.6875 5.5625Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10.375 9.93727V9.06227C10.3747 8.67452 10.2457 8.29785 10.0081 7.9914C9.77054 7.68495 9.43793 7.46608 9.0625 7.36914" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M7.75 2.11914C8.12643 2.21552 8.46008 2.43445 8.69834 2.7414C8.93661 3.04836 9.06593 3.42588 9.06593 3.81445C9.06593 4.20303 8.93661 4.58055 8.69834 4.8875C8.46008 5.19446 8.12643 5.41338 7.75 5.50977" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4242}><span className={styles.ClientNetwork_15_4243}>Client Network</span></div>
+              </div>
+              <div className={styles.Container_15_4244}>
+                <div className={styles.Background_15_4245}>
+                  <div className={styles.Svg_15_4246}><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.375 3.3125L6.65625 7.03125L4.46875 4.84375L1.625 7.6875" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M7.75 3.3125H10.375V5.9375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4249}><span className={styles.Analytics_15_4250}>Analytics</span></div>
+              </div>
+              <div className={styles.Container_15_4251}>
+                <div className={styles.Background_15_4252}>
+                  <div className={styles.Svg_15_4253}><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 4.25C8.17462 4.25 9.9375 3.66237 9.9375 2.9375C9.9375 2.21263 8.17462 1.625 6 1.625C3.82538 1.625 2.0625 2.21263 2.0625 2.9375C2.0625 3.66237 3.82538 4.25 6 4.25Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2.0625 2.9375V9.0625C2.0625 9.4106 2.47734 9.74444 3.21577 9.99058C3.95419 10.2367 4.95571 10.375 6 10.375C7.04429 10.375 8.04581 10.2367 8.78423 9.99058C9.52266 9.74444 9.9375 9.4106 9.9375 9.0625V2.9375" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2.0625 6C2.0625 6.3481 2.47734 6.68194 3.21577 6.92808C3.95419 7.17422 4.95571 7.3125 6 7.3125C7.04429 7.3125 8.04581 7.17422 8.78423 6.92808C9.52266 6.68194 9.9375 6.3481 9.9375 6" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4257}><span className={styles.DataSources_15_4258}>Data Sources</span></div>
+              </div>
+              <div className={styles.Container_15_4259}>
+                <div className={styles.Background_15_4260}>
+                  <div className={styles.Svg_15_4261}><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 9.875C8.41625 9.875 10.375 7.91625 10.375 5.5C10.375 3.08375 8.41625 1.125 6 1.125C3.58375 1.125 1.625 3.08375 1.625 5.5C1.625 7.91625 3.58375 9.875 6 9.875Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M6 8.125C7.44975 8.125 8.625 6.94975 8.625 5.5C8.625 4.05025 7.44975 2.875 6 2.875C4.55025 2.875 3.375 4.05025 3.375 5.5C3.375 6.94975 4.55025 8.125 6 8.125Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M6 6.375C6.48325 6.375 6.875 5.98325 6.875 5.5C6.875 5.01675 6.48325 4.625 6 4.625C5.51675 4.625 5.125 5.01675 5.125 5.5C5.125 5.98325 5.51675 6.375 6 6.375Z" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.Container_15_4265}><span className={styles.InvestmentTargets_15_4266}>Investment Targets</span></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.Button_15_4267}><span className={styles.CreateNew_15_4268}>+ Create new</span></div>
+        </div>
+        <div className={styles.HorizontalBorder_15_4269}>
+          <div className={styles.Container_15_4270}>
+            <div className={styles.Background_15_4271}>
+              <div className={styles.Container_15_4272}><span className={styles.Ai_15_4273}>AI</span></div>
+            </div>
+            <div className={styles.Container_15_4274}>
+              <div className={styles.Container_15_4275}><span className={styles.AiAssistant_15_4276}>AI Assistant</span></div>
+              <div className={styles.Container_15_4277}><span className={styles.ReadyToHelp_15_4278}>Ready to help</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.Container_15_4279}>
+        <div className={styles.HorizontalBorder_15_4280}>
+          <div className={styles.Container_15_4281}>
+            <div className={styles.Frame_1_15_4282}>
+              <div className={styles.Container_15_4283}>
+                <div className={styles.Input_15_4284}>
+                  <div className={styles.Container_15_4285}><span className={styles.SearchCompanies_15_4286}>Search companies...</span></div>
+                  <div className={styles.Container_15_4287}></div>
+                </div>
+                <div className={styles.Svg_15_4288}><svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.91667 11.0833C9.494 11.0833 11.5833 8.994 11.5833 6.41667C11.5833 3.83934 9.494 1.75 6.91667 1.75C4.33934 1.75 2.25 3.83934 2.25 6.41667C2.25 8.994 4.33934 11.0833 6.91667 11.0833Z" stroke="#717182" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12.75 12.25L10.2417 9.7417" stroke="#717182" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div className={styles.Container_15_4291}>
+              <div className={styles.Container_15_4292}>
+                <div className={styles.Margin_15_4293}>
+                  <div className={styles.Border_15_4294}>
+                    <div className={styles.SvgMargin_15_4295}>
+                      <div className={styles.Svg_15_4296}>
+                        <div className={styles.Frame_15_4297}><svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.37871 4.82717C9.57851 5.80774 9.43612 6.82717 8.97527 7.71546C8.51442 8.60375 7.76298 9.3072 6.84625 9.7085C5.92952 10.1098 4.90292 10.1847 3.93765 9.92071C2.97239 9.65672 2.12679 9.06979 1.54189 8.2578C0.956993 7.44581 0.668138 6.45784 0.7235 5.45866C0.778862 4.45947 1.17509 3.50946 1.84612 2.76706C2.51714 2.02466 3.4224 1.53474 4.41093 1.379C5.39945 1.22326 6.41149 1.41111 7.27827 1.91124" stroke="#00A63E" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M3.77832 5.26465L5.09082 6.57715L9.46582 2.20215" stroke="#00A63E" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div><span className={styles.AllSystemsOperational_15_4300}>All Systems Operational</span>
+                  </div>
+                </div>
+                <div className={styles.Profile_15_4301}>
+                  <div className={styles.Frame_5518_15_4302}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.Container_15_4308}>
+          <div className={styles.Content_15_4309}>
+            <div className={styles.HeaderSectionHeader_15_4310}>
+              <div className={styles.Frame_47627_15_5446}>
+                <div className={styles.Frame_47626_15_5411}>
+                  <div className={styles.Frame_47625_15_5390}>
+                    <div className={styles.MynauiHome_15_5386}>
+                      <div className={styles.Group_15_5387}><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.08866 12.4997C1.30332 12.4997 0.666656 11.8464 0.666656 11.0397V5.1717C0.666656 4.72836 0.863323 4.30836 1.19999 4.0317L5.11132 0.819696C5.36123 0.612751 5.67552 0.499512 5.99999 0.499512C6.32446 0.499512 6.63875 0.612751 6.88866 0.819696L10.7993 4.0317C11.1367 4.30836 11.3333 4.72836 11.3333 5.1717V11.0397C11.3333 11.8464 10.6967 12.4997 9.91132 12.4997H2.08866Z" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M4.33325 12.5V8.83333C4.33325 8.47971 4.47373 8.14057 4.72378 7.89052C4.97382 7.64048 5.31296 7.5 5.66659 7.5H6.33325C6.68687 7.5 7.02601 7.64048 7.27606 7.89052C7.52611 8.14057 7.66659 8.47971 7.66659 8.83333V12.5" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                    </div><span className={styles.HomePage_15_4311}>Home Page</span>
+                  </div><span className={styles.ActivitySummary_15_4312}>Activity summary</span>
+                </div>
+                <div className={styles.Frame_47623_15_4313}>
+                  <div className={styles.Action_15_4371}>
+                    <div className={styles.Buttons_15_4382}>
+                      <div className={styles.IconPlus_15_4383}><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.5 8H2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M8 13.5V2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div><span className={styles.NewResearch_15_4386}>New Research</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Container_15_5412}>
+                <div className={styles.HorizontalBorder_15_5413}>
+                  <div className={styles.Container_15_5414}>
+                    <div className={styles.Heading_2_15_5417}>
+                      <div className={styles.Background_15_5434}>
+                        <div className={styles.Svg_15_5435}><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.99999 4.66683V2.3335H4.66666" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M10.5 4.6665H3.50001C2.85568 4.6665 2.33334 5.18884 2.33334 5.83317V10.4998C2.33334 11.1442 2.85568 11.6665 3.50001 11.6665H10.5C11.1443 11.6665 11.6667 11.1442 11.6667 10.4998V5.83317C11.6667 5.18884 11.1443 4.6665 10.5 4.6665Z" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M1.16666 8.1665H2.33332" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11.6667 8.1665H12.8333" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M8.75 7.5835V8.75016" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.25 7.5835V8.75016" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div><span className={styles.AiAssistant_15_5418}>AI Assistant</span>
+                    </div>
+                    <div className={styles.Container_15_5421}>
+                      <div className={styles.Margin_15_5422}>
+                        <div className={styles.Background_15_5423}><span className={styles.AlwaysOn_15_5424}>Always-On</span></div>
+                      </div>
+                      <div className={styles.Button_15_5425}>
+                        <div className={styles.Svg_15_5426}><svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.24996 7.58317C7.57213 7.58317 7.83329 7.322 7.83329 6.99984C7.83329 6.67767 7.57213 6.4165 7.24996 6.4165C6.92779 6.4165 6.66663 6.67767 6.66663 6.99984C6.66663 7.322 6.92779 7.58317 7.24996 7.58317Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11.3333 7.58317C11.6555 7.58317 11.9167 7.322 11.9167 6.99984C11.9167 6.67767 11.6555 6.4165 11.3333 6.4165C11.0112 6.4165 10.75 6.67767 10.75 6.99984C10.75 7.322 11.0112 7.58317 11.3333 7.58317Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M3.16671 7.58317C3.48887 7.58317 3.75004 7.322 3.75004 6.99984C3.75004 6.67767 3.48887 6.4165 3.16671 6.4165C2.84454 6.4165 2.58337 6.67767 2.58337 6.99984C2.58337 7.322 2.84454 7.58317 3.16671 7.58317Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.Container_15_5430}>
+                  <div className={styles.Container_15_5442}>
+                    <div className={styles.Background_15_5443}>
+                      <div className={styles.Paragraph_15_5444}><span className={styles.AskeMeAboutAnyCompanyOrContact_15_5445}>&#x1F44B; Aske me about any company or contact</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.Content_15_4390}>
+              <div className={styles.Planned_15_4391}>
+                <div className={styles.Frame_47624_15_4392}>
+                  <div className={styles.Title_15_4393}>
+                    <div className={styles.Content_15_4394}>
+                      <div className={styles.Ellipse_817_15_4395}></div>
+                      <div className={styles.Content_15_4396}><span className={styles.ActiveResearchs_15_4397}>Active researchs</span><span className={styles.CompaniesListed_15_4398}>3 companies listed</span></div>
+                    </div>
+                  </div>
+                  <div className={styles.Buttons_15_4399}>
+                    <div className={styles.IconFunnelSimple_15_4400}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 8.31494H12" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M1.5 5.31494H14.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M6.5 11.3149H9.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div><span className={styles.SortBy_15_4404}>Sort By</span>
+                  </div>
+                </div>
+                <div className={styles.Content_15_4409}>
+                  <div className={styles.List_15_4410}>
+                    <div className={styles.Content_15_4411}>
+                      <div className={styles.Checkbox_15_4412}>
+                        <div className={styles.RoundedRectangle_15_4413}></div>
+                      </div><span className={styles.BigKahunaBurgerLtd_15_4414}>Big Kahuna Burger Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4415}>
+                      <div className={styles.Date_15_4416}>
+                        <div className={styles.IconCalendar_15_4417}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#282828" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_24Jan_2023_15_4425}>Due Date 24 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4426}>
+                        <div className={styles.Badge_15_4427}><span className={styles.Badge_15_4428}>Internal</span></div>
+                        <div className={styles.Badge_15_4433}><span className={styles.Badge_15_4434}>Marketing</span></div>
+                        <div className={styles.Badge_15_4439}><span className={styles.Badge_15_4440}>Urgent</span></div>
+                      </div>
+                      <div className={styles.Member_15_4445}>
+                        <div className={styles.Frame_5518_15_4446}></div>
+                        <div className={styles.Frame_5521_15_4447}></div>
+                        <div className={styles.Frame_5519_15_4448}></div>
+                        <div className={styles.Frame_5520_15_4449}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4450}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4454}>
+                    <div className={styles.Content_15_4455}>
+                      <div className={styles.Checkbox_15_4456}>
+                        <div className={styles.RoundedRectangle_15_4457}></div>
+                      </div><span className={styles.AcmeCo_15_4458}>Acme Co.</span>
+                    </div>
+                    <div className={styles.Content_15_4459}>
+                      <div className={styles.Date_15_4460}>
+                        <div className={styles.IconCalendar_15_4461}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_18Jan_2023_15_4469}>Due Date 18 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4470}>
+                        <div className={styles.Badge_15_4471}><span className={styles.Badge_15_4472}>Marketing</span></div>
+                        <div className={styles.Badge_15_4477}><span className={styles.Badge_15_4478}>Event</span></div>
+                        <div className={styles.Badge_15_4483}><span className={styles.Badge_15_4484}>Urgent</span></div>
+                      </div>
+                      <div className={styles.Member_15_4489}>
+                        <div className={styles.Frame_5521_15_4491}></div>
+                        <div className={styles.Frame_5519_15_4492}></div>
+                        <div className={styles.Frame_5520_15_4493}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4494}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4498}>
+                    <div className={styles.Content_15_4499}>
+                      <div className={styles.Checkbox_15_4500}>
+                        <div className={styles.RoundedRectangle_15_4501}></div>
+                      </div><span className={styles.BinfordLtd_15_4502}>Binford Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4503}>
+                      <div className={styles.Date_15_4504}>
+                        <div className={styles.IconCalendar_15_4505}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_31Jan_2023_15_4513}>Due Date 31 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4514}>
+                        <div className={styles.Badge_15_4515}><span className={styles.Badge_15_4516}>Internal</span></div>
+                        <div className={styles.Badge_15_4521}><span className={styles.Badge_15_4522}>Document</span></div>
+                        <div className={styles.Badge_15_4527}><span className={styles.Badge_15_4528}>Marketing</span></div>
+                      </div>
+                      <div className={styles.Member_15_4533}>
+                        <div className={styles.Frame_5519_15_4536}></div>
+                        <div className={styles.Frame_5520_15_4537}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4538}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Upcoming_15_4542}>
+                <div className={styles.Title_15_4543}>
+                  <div className={styles.CaretUp_15_4544}><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.0002 15.022L11.7931 8.81494L5.58598 15.022L7.00018 16.4363L11.7931 11.6434L16.586 16.4363L18.0002 15.022Z" fill="#AFAFAF" />
+                    </svg>
+                  </div>
+                  <div className={styles.Content_15_4546}>
+                    <div className={styles.Ellipse_817_15_4547}></div>
+                    <div className={styles.Content_15_4548}><span className={styles.LatestAnalysis_15_4549}>Latest analysis</span><span className={styles.CompaniesListed_15_4550}>5 companies listed</span></div>
+                  </div>
+                </div>
+                <div className={styles.Content_15_4551}>
+                  <div className={styles.List_15_4552}>
+                    <div className={styles.Content_15_4553}>
+                      <div className={styles.Checkbox_15_4554}>
+                        <div className={styles.RoundedRectangle_15_4555}></div>
+                      </div><span className={styles.BinfordLtd_15_4556}>Binford Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4557}>
+                      <div className={styles.Date_15_4558}>
+                        <div className={styles.IconCalendar_15_4559}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_11Jan_2023_15_4567}>Due Date 11 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4568}>
+                        <div className={styles.Badge_15_4569}><span className={styles.Badge_15_4570}>Report</span></div>
+                        <div className={styles.Badge_15_4575}><span className={styles.Badge_15_4576}>Event</span></div>
+                        <div className={styles.Badge_15_4581}><span className={styles.Badge_15_4582}>Urgent</span></div>
+                      </div>
+                      <div className={styles.Member_15_4587}>
+                        <div className={styles.Frame_5519_15_4590}></div>
+                        <div className={styles.Frame_5520_15_4591}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4592}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4596}>
+                    <div className={styles.Content_15_4597}>
+                      <div className={styles.Checkbox_15_4598}>
+                        <div className={styles.RoundedRectangle_15_4599}></div>
+                      </div><span className={styles.BaroneLlc_15_4600}>Barone LLC.</span>
+                    </div>
+                    <div className={styles.Content_15_4601}>
+                      <div className={styles.Date_15_4602}>
+                        <div className={styles.IconCalendar_15_4603}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_09Jan_2023_15_4611}>Due Date 09 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4612}>
+                        <div className={styles.Badge_15_4613}><span className={styles.Badge_15_4614}>Report</span></div>
+                        <div className={styles.Badge_15_4619}><span className={styles.Badge_15_4620}>Document</span></div>
+                        <div className={styles.Badge_15_4625}><span className={styles.Badge_15_4626}>Marketing</span></div>
+                      </div>
+                      <div className={styles.Member_15_4631}>
+                        <div className={styles.Frame_5518_15_4632}></div>
+                        <div className={styles.Frame_5519_15_4634}></div>
+                        <div className={styles.Frame_5520_15_4635}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4636}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4640}>
+                    <div className={styles.Content_15_4641}>
+                      <div className={styles.Checkbox_15_4642}>
+                        <div className={styles.RoundedRectangle_15_4643}></div>
+                      </div><span className={styles.BinfordLtd_15_4644}>Binford Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4645}>
+                      <div className={styles.Date_15_4646}>
+                        <div className={styles.IconCalendar_15_4647}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_12Jan_2023_15_4655}>Due Date 12 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4656}>
+                        <div className={styles.Badge_15_4657}><span className={styles.Badge_15_4658}>Internal</span></div>
+                        <div className={styles.Badge_15_4663}><span className={styles.Badge_15_4664}>Marketing</span></div>
+                        <div className={styles.Badge_15_4669}><span className={styles.Badge_15_4670}>Urgent</span></div>
+                      </div>
+                      <div className={styles.Member_15_4675}>
+                        <div className={styles.Frame_5518_15_4676}></div>
+                        <div className={styles.Frame_5521_15_4677}></div>
+                        <div className={styles.Frame_5519_15_4678}></div>
+                        <div className={styles.Frame_5520_15_4679}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4680}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4684}>
+                    <div className={styles.Content_15_4685}>
+                      <div className={styles.Checkbox_15_4686}>
+                        <div className={styles.RoundedRectangle_15_4687}></div>
+                      </div><span className={styles.AbstergoLtd_15_4688}>Abstergo Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4689}>
+                      <div className={styles.Date_15_4690}>
+                        <div className={styles.IconCalendar_15_4691}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_15Jan_2023_15_4699}>Due Date 15 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4700}>
+                        <div className={styles.Badge_15_4701}><span className={styles.Badge_15_4702}>Marketing</span></div>
+                        <div className={styles.Badge_15_4707}><span className={styles.Badge_15_4708}>Event</span></div>
+                        <div className={styles.Badge_15_4713}><span className={styles.Badge_15_4714}>Urgent</span></div>
+                      </div>
+                      <div className={styles.Member_15_4719}>
+                        <div className={styles.Frame_5521_15_4721}></div>
+                        <div className={styles.Frame_5519_15_4722}></div>
+                        <div className={styles.Frame_5520_15_4723}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4724}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.List_15_4728}>
+                    <div className={styles.Content_15_4729}>
+                      <div className={styles.Checkbox_15_4730}>
+                        <div className={styles.RoundedRectangle_15_4731}></div>
+                      </div><span className={styles.BiffcoEnterprisesLtd_15_4732}>Biffco Enterprises Ltd.</span>
+                    </div>
+                    <div className={styles.Content_15_4733}>
+                      <div className={styles.Date_15_4734}>
+                        <div className={styles.IconCalendar_15_4735}><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3.31494H3C2.72386 3.31494 2.5 3.5388 2.5 3.81494V13.8149C2.5 14.0911 2.72386 14.3149 3 14.3149H13C13.2761 14.3149 13.5 14.0911 13.5 13.8149V3.81494C13.5 3.5388 13.2761 3.31494 13 3.31494Z" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M11 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 2.31494V4.31494" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2.5 6.31494H13.5" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5.75 8.81494H7.5L6.5 10.0649C6.66443 10.0649 6.82631 10.1055 6.97133 10.183C7.11635 10.2605 7.24001 10.3725 7.33139 10.5092C7.42276 10.6459 7.47901 10.8031 7.49516 10.9667C7.51132 11.1303 7.48687 11.2954 7.424 11.4473C7.36112 11.5993 7.26175 11.7334 7.13469 11.8377C7.00763 11.9421 6.85679 12.0135 6.69554 12.0456C6.53429 12.0778 6.3676 12.0697 6.21023 12.022C6.05286 11.9744 5.90966 11.8887 5.79332 11.7725" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 9.56494L10 8.81494V12.0649" stroke="#727272" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div><span className={styles.DueDate_13Jan_2023_15_4743}>Due Date 13 Jan 2023</span>
+                      </div>
+                      <div className={styles.Badge_15_4744}>
+                        <div className={styles.Badge_15_4745}><span className={styles.Badge_15_4746}>Internal</span></div>
+                        <div className={styles.Badge_15_4751}><span className={styles.Badge_15_4752}>Document</span></div>
+                        <div className={styles.Badge_15_4757}><span className={styles.Badge_15_4758}>Marketing</span></div>
+                      </div>
+                      <div className={styles.Member_15_4763}>
+                        <div className={styles.Frame_5519_15_4766}></div>
+                        <div className={styles.Frame_5520_15_4767}></div>
+                      </div>
+                    </div>
+                    <div className={styles.IconDotsThreeVertical_15_4768}><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.93738 10.6587C8.93738 11.0902 9.28716 11.4399 9.71863 11.4399C10.1501 11.4399 10.4999 11.0902 10.4999 10.6587C10.4999 10.2272 10.1501 9.87744 9.71863 9.87744C9.28716 9.87744 8.93738 10.2272 8.93738 10.6587Z" fill="black" />
+                        <path d="M8.93738 15.6587C8.93738 16.0902 9.28716 16.4399 9.71863 16.4399C10.1501 16.4399 10.4999 16.0902 10.4999 15.6587C10.4999 15.2272 10.1501 14.8774 9.71863 14.8774C9.28716 14.8774 8.93738 15.2272 8.93738 15.6587Z" fill="black" />
+                        <path d="M8.93738 5.65869C8.93738 6.09016 9.28716 6.43994 9.71863 6.43994C10.1501 6.43994 10.4999 6.09016 10.4999 5.65869C10.4999 5.22722 10.1501 4.87744 9.71863 4.87744C9.28716 4.87744 8.93738 5.22722 8.93738 5.65869Z" fill="black" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.Container_15_5447}>
+          <div className={styles.HorizontalBorder_15_5448}>
+            <div className={styles.Container_15_5449}>
+              <div className={styles.Container_15_5450}>
+                <div className={styles.Container_15_5451}>
+                  <div className={styles.Heading_2_15_5452}><span className={styles.AiAssistant_15_5453}>AI Assistant</span></div>
+                  <div className={styles.Container_15_5454}><span className={styles.AskMeAnything_15_5455}>Ask me anything</span></div>
+                </div>
+              </div>
+              <div className={styles.Container_15_5456}>
+                <div className={styles.Button_15_5460}>
+                  <div className={styles.Svg_15_5461}><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.24996 7.76823C7.57213 7.76823 7.83329 7.50706 7.83329 7.1849C7.83329 6.86273 7.57213 6.60156 7.24996 6.60156C6.92779 6.60156 6.66663 6.86273 6.66663 7.1849C6.66663 7.50706 6.92779 7.76823 7.24996 7.76823Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M11.3333 7.76823C11.6555 7.76823 11.9167 7.50706 11.9167 7.1849C11.9167 6.86273 11.6555 6.60156 11.3333 6.60156C11.0112 6.60156 10.75 6.86273 10.75 7.1849C10.75 7.50706 11.0112 7.76823 11.3333 7.76823Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3.16671 7.76823C3.48887 7.76823 3.75004 7.50706 3.75004 7.1849C3.75004 6.86273 3.48887 6.60156 3.16671 6.60156C2.84454 6.60156 2.58337 6.86273 2.58337 7.1849C2.58337 7.50706 2.84454 7.76823 3.16671 7.76823Z" stroke="#0A0A0A" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.Container_15_5465}>
+            <div className={styles.Container_15_5466}>
+              <div className={styles.Margin_15_5467}>
+                <div className={styles.Container_15_5468}>
+                  <div className={styles.Background_15_5469}>
+                    <div className={styles.Svg_15_5470}><svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.00002 4.85189V2.51855H4.66669" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M10.5 4.85156H3.49998C2.85565 4.85156 2.33331 5.3739 2.33331 6.01823V10.6849C2.33331 11.3292 2.85565 11.8516 3.49998 11.8516H10.5C11.1443 11.8516 11.6666 11.3292 11.6666 10.6849V6.01823C11.6666 5.3739 11.1443 4.85156 10.5 4.85156Z" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M1.16669 8.35156H2.33335" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M11.6667 8.35156H12.8334" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8.75 7.76855V8.93522" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M5.25 7.76855V8.93522" stroke="#155DFC" strokeWidth="1.16667" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.Container_15_5477}>
+                <div className={styles.Background_15_5478}>
+                  <div className={styles.Paragraph_15_5479}><span className={styles.AskMeAboutAnyCompanyOrContact_15_5480}>Ask me about any company or contact</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
