@@ -1,0 +1,86 @@
+Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?
+
+Check the render method of `Primitive.button.SlotClone`.
+    at Button (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/button.tsx:46:3)
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2413:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:135:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:937:13
+    at DropdownMenuTrigger (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:42:6)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Popper (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2405:11)
+    at Menu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:89:11)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:902:5)
+    at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:22:6)
+    at div
+    at div
+    at div
+    at Layout (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/Layout.tsx:27:26)
+    at App
+Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?
+
+Check the render method of `Primitive.button.SlotClone`.
+    at Button (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/button.tsx:46:3)
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2413:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:135:13
+    at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:937:13
+    at DropdownMenuTrigger (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:42:6)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at Popper (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2405:11)
+    at Menu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:89:11)
+    at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+    at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:902:5)
+    at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:22:6)
+    at div
+    at div
+    at div
+    at div
+    at Layout (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/Layout.tsx:27:26)
+    at App
+
+Check the render method of &#x60;Primitive.button.SlotClone&#x60;.
+at Button (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/button.tsx:46:3)
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:79:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-R6R6T6DH.js?v=f617d7b6:56:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-ELMVTMPM.js?v=f617d7b6:43:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2413:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:135:13
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:937:13
+at DropdownMenuTrigger (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:42:6)
+at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+at Popper (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-AFUZDOB5.js?v=f617d7b6:2405:11)
+at Menu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:89:11)
+at Provider (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/chunk-KKFDKJFO.js?v=f617d7b6:22:15)
+at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/node_modules/.vite/deps/@radix-ui_react-dropdown-menu.js?v=f617d7b6:902:5)
+at DropdownMenu (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/ui/dropdown-menu.tsx:22:6)
+at div
+at div
+at div
+at div
+at Layout (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/components/Layout.tsx:27:26)
+at App
+at t.value (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://ea216ad6-2889-4a53-9ce2-e3cfa6dc2395-00-33iypss8vsf47.worf.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
