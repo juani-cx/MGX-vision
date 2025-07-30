@@ -17,12 +17,23 @@ export function Dashboard() {
   const [companies, setCompanies] = useState<any[]>([
     {
       id: "1",
+      companyName: "Tesla Inc.",
+      industrySector: "Automotive",
       name: "Tesla Inc.",
       type: "Financial Analysis",
       status: "completed",
       createdAt: "Feb 14, 2024",
+      lastUpdated: "Feb 20, 2024",
       priority: "high",
+      priorityLevel: "high",
       assignee: "Sarah Chen",
+      assignedTo: "Sarah Chen",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "product-competitiveness",
+        "business-model-analysis"
+      ],
+      additionalNotes: "Complete financial analysis of Tesla's market position",
       results: {
         company: {
           name: "Tesla Inc.",
@@ -74,21 +85,43 @@ export function Dashboard() {
     },
     {
       id: "2",
+      companyName: "Rivian",
+      industrySector: "Automotive",
       name: "Rivian",
       type: "Market Research",
       status: "processing",
       createdAt: "Feb 15, 2024",
+      lastUpdated: "Feb 15, 2024",
       priority: "medium",
-      assignee: "Alex Park"
+      priorityLevel: "medium",
+      assignee: "Alex Park",
+      assignedTo: "Alex Park",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "market-share-data",
+        "funding-activity"
+      ],
+      additionalNotes: "Market research on electric vehicle startup positioning"
     },
     {
       id: "3",
+      companyName: "SpaceX",
+      industrySector: "Aerospace",
       name: "SpaceX",
       type: "Network Analysis",
       status: "completed",
       createdAt: "Feb 13, 2024",
+      lastUpdated: "Feb 18, 2024",
       priority: "high",
+      priorityLevel: "high",
       assignee: "Maria Rodriguez",
+      assignedTo: "Maria Rodriguez",
+      researchFocusAreas: [
+        "competitor-benchmarking",
+        "funding-activity",
+        "technical-stack"
+      ],
+      additionalNotes: "Network analysis and competitive positioning in aerospace",
       results: {
         networkInsights: {
           directConnections: 8,
