@@ -5,13 +5,14 @@ import { Input } from "./ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { AIResearchPrompt } from "./AIResearchPrompt";
-import { ResearchResults } from "./ResearchResults";
+import { ResearchForm, ResearchFormData } from "./ResearchForm";
+import { ResearchDetailPage } from "./ResearchDetailPage";
 
 export function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showNewResearch, setShowNewResearch] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState<any | null>(null);
+  const [editingCompany, setEditingCompany] = useState<any | null>(null);
 
   const [companies, setCompanies] = useState<any[]>([
     {
@@ -198,28 +199,38 @@ export function Dashboard() {
     }
   ];
 
-  const handleNewResearch = (prompt: string, type: string) => {
-    const companyName = prompt.split(' ')[0]; // Extract company name from prompt
+  const handleNewResearch = (formData: ResearchFormData) => {
     const newCompany = {
       id: Date.now().toString(),
-      name: companyName,
-      type: type.charAt(0).toUpperCase() + type.slice(1) + " Analysis",
-      status: "processing",
+      name: formData.companyName,
+      type: "Market Research",
+      status: "processing" as const,
       createdAt: new Date().toLocaleDateString(),
-      priority: "medium",
-      assignee: "Current User"
+      lastUpdated: new Date().toLocaleDateString(),
+      priority: formData.priorityLevel,
+      assignee: formData.assignedTo,
+      companyName: formData.companyName,
+      industrySector: formData.industrySector,
+      researchFocusAreas: formData.researchFocusAreas,
+      additionalNotes: formData.additionalNotes,
+      priorityLevel: formData.priorityLevel,
+      assignedTo: formData.assignedTo
     };
     
     setCompanies([newCompany, ...companies]);
     setShowNewResearch(false);
+    setSelectedCompany(newCompany);
     
     // Simulate processing completion after 3 seconds
     setTimeout(() => {
       setCompanies(prev => prev.map(company => 
         company.id === newCompany.id 
-          ? { ...company, status: "completed", results: { /* mock results */ } }
+          ? { ...company, status: "completed" as const }
           : company
       ));
+      if (selectedCompany?.id === newCompany.id) {
+        setSelectedCompany({ ...newCompany, status: "completed" as const });
+      }
     }, 3000);
   };
 
@@ -278,131 +289,48 @@ export function Dashboard() {
     </div>
   );
 
-  // New Research Modal Component
-  const NewResearchModal = () => {
-    if (!showNewResearch) return null;
-
+  // Show Research Form
+  if (showNewResearch) {
     return (
-      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
-          <div className="p-6 border-b flex items-center justify-between">
-            <h2 className="text-xl font-semibold">New Research Task</h2>
-            <Button variant="ghost" size="sm" onClick={() => setShowNewResearch(false)}>
-              <X className="w-4 h-4" />
-            </Button>
-          </div>
-          <div className="p-6">
-            <AIResearchPrompt onSubmit={handleNewResearch} />
-          </div>
-        </div>
-      </div>
+      <ResearchForm
+        onBack={() => setShowNewResearch(false)}
+        onSubmit={handleNewResearch}
+      />
     );
-  };
+  }
+
+  // Show Edit Research Form
+  if (editingCompany) {
+    return (
+      <ResearchForm
+        onBack={() => setEditingCompany(null)}
+        onSubmit={(formData) => {
+          // Update existing company
+          setCompanies(prev => prev.map(company => 
+            company.id === editingCompany.id 
+              ? { ...company, ...formData, lastUpdated: new Date().toLocaleDateString() }
+              : company
+          ));
+          setEditingCompany(null);
+          setSelectedCompany({ ...editingCompany, ...formData });
+        }}
+        initialData={editingCompany}
+      />
+    );
+  }
 
   if (selectedCompany) {
     return (
-      <div className="flex h-screen">
-        {/* Main Content Area - Middle Column */}
-        <div className="flex-1 flex flex-col">
-          <div className="border-b border-border p-6">
-            <div className="flex items-center justify-between mb-4">
-              <Button 
-                variant="ghost" 
-                onClick={() => setSelectedCompany(null)}
-              >
-                ← Back to Dashboard
-              </Button>
-              <Badge variant="secondary">{selectedCompany.type}</Badge>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-green-500" />
-              <h1 className="text-2xl">{selectedCompany.name}</h1>
-            </div>
-          </div>
-          
-          <div className="flex-1 overflow-auto">
-            <ResearchResults task={selectedCompany} />
-          </div>
-        </div>
-
-        {/* Right Sidebar - AI Assistant */}
-        <div className="w-80 bg-sidebar border-l border-sidebar-border flex flex-col">
-          {/* AI Assistant Header */}
-          <div className="p-6 border-b border-sidebar-border">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Brain className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="text-sidebar-foreground font-medium">AI Assistant</h3>
-                <p className="text-xs text-muted-foreground">Ask about this company</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Chat Input */}
-          <div className="p-4 border-b border-sidebar-border">
-            <div className="flex items-center gap-2 p-3 border rounded-lg bg-input-background">
-              <Input 
-                placeholder="Ask me about this client..."
-                className="border-0 bg-transparent focus-visible:ring-0 text-sm"
-              />
-              <Button size="sm" variant="ghost">
-                <Send className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="p-4 space-y-2">
-            <h4 className="text-xs text-muted-foreground mb-3">Quick Actions</h4>
-            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-              <TrendingUp className="w-4 h-4 mr-2" />
-              Financial Summary
-            </Button>
-            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-              <Users className="w-4 h-4 mr-2" />
-              Network Analysis
-            </Button>
-            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-              <Brain className="w-4 h-4 mr-2" />
-              Investment Thesis
-            </Button>
-            <Button variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              Key Metrics
-            </Button>
-          </div>
-
-          {/* Chat History */}
-          <div className="flex-1 p-4">
-            <h4 className="text-xs text-muted-foreground mb-3">Recent Queries</h4>
-            <div className="space-y-2 text-sm">
-              <div className="p-2 bg-sidebar-accent rounded text-sidebar-foreground">
-                "What's Tesla's current market position?"
-              </div>
-              <div className="p-2 bg-muted rounded text-muted-foreground">
-                "Show me the competitive analysis"
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Status */}
-          <div className="p-4 border-t border-sidebar-border">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-xs text-muted-foreground">AI Online</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ResearchDetailPage
+        onBack={() => setSelectedCompany(null)}
+        onEdit={() => setEditingCompany(selectedCompany)}
+        researchData={selectedCompany}
+      />
     );
   }
 
   return (
     <div className="flex-1 flex flex-col">
-      <NewResearchModal />
       
       {/* Main Content */}
       <div className="flex-1 bg-gray-50">
