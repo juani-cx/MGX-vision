@@ -94,12 +94,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
             </div>
           </div>
 
-          <div className="mt-6">
-            <Button variant="ghost" size="sm" className="w-full justify-start text-white hover:bg-white/10">
-              <Plus className="w-4 h-4 mr-2" />
-              Create new
-            </Button>
-          </div>
+          
         </div>
 
         {/* Bottom Section */}
