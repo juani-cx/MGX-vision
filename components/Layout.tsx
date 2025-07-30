@@ -27,7 +27,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
   return (
     <div className="flex h-screen bg-white">
       {/* Sidebar */}
-      <div className="w-56 bg-[#0f1951] flex flex-col">
+      <div className="w-56 bg-[#0f1951] flex flex-col fixed h-full z-10">
         {/* Logo/Header */}
         <div className="p-6 border-b border-[#20308e]">
           <div className="flex items-center justify-center">
@@ -79,11 +79,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                   >
-                    <div className={`w-4 h-4 rounded text-xs flex items-center justify-center ${
-                      isActive ? "bg-white text-[#504b95]" : "bg-[#030213]"
-                    }`}>
-                      <Icon className="w-3 h-3" />
-                    </div>
+                    <Icon className="w-4 h-4" />
                     <span>{item.label}</span>
                   </div>
                 );
@@ -114,7 +110,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col ml-56">
         {children}
       </div>
     </div>
