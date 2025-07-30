@@ -138,8 +138,53 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
         </div>
       </div>
 
+      {/* Fixed Top Navigation */}
+      <div className="fixed top-0 left-56 right-0 z-20 border-b border-gray-200 bg-white px-6 py-5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-6 flex-1">
+            <div className="relative flex-1 max-w-lg">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                placeholder="Search companies..."
+                className="pl-10 bg-white border border-gray-300 h-8"
+              />
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1 border border-green-300 rounded-lg">
+              <div className="w-3 h-3 text-green-600">
+                <div className="w-3 h-3 bg-green-500 rounded-full" />
+              </div>
+              <span className="text-green-600 text-sm">All Systems Operational</span>
+            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="w-8 h-8 rounded-full bg-gray-300 p-0 hover:bg-gray-400">
+                  <User className="w-4 h-4 text-gray-600" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end">
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span>User Profile</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <Cog className="w-4 h-4" />
+                  <span>Configuration</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="flex items-center gap-2 text-red-600">
+                  <LogOut className="w-4 h-4" />
+                  <span>Logout</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-56">
+      <div className="flex-1 flex flex-col ml-56 pt-20">
         {children}
       </div>
     </div>

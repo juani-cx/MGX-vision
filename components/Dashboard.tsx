@@ -404,32 +404,6 @@ export function Dashboard() {
     <div className="flex-1 flex flex-col">
       <NewResearchModal />
       
-      {/* Header */}
-      <div className="border-b border-gray-200 bg-white px-6 py-5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6 flex-1">
-            <div className="relative flex-1 max-w-lg">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <Input
-                placeholder="Search companies..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-white border border-gray-300 h-8"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-3 py-1 border border-green-300 rounded-lg">
-              <div className="w-3 h-3 text-green-600">
-                <CheckCircle className="w-3 h-3" />
-              </div>
-              <span className="text-green-600 text-sm">All Systems Operational</span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-gray-300" />
-          </div>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="flex-1 bg-gray-50">
         {/* Page Header */}
