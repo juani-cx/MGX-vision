@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Plus, Filter, Search, MoreVertical, Brain, TrendingUp, Users, Clock, CheckCircle, Send, Calendar, Home, ChevronUp } from "lucide-react";
+import { Plus, Filter, Search, MoreVertical, Brain, TrendingUp, Users, Clock, CheckCircle, Send, Calendar, Home, ChevronUp, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { AIResearchPrompt } from "./AIResearchPrompt";
+import { ResearchResults } from "./ResearchResults";
 
 export function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -276,6 +278,27 @@ export function Dashboard() {
     </div>
   );
 
+  // New Research Modal Component
+  const NewResearchModal = () => {
+    if (!showNewResearch) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
+          <div className="p-6 border-b flex items-center justify-between">
+            <h2 className="text-xl font-semibold">New Research Task</h2>
+            <Button variant="ghost" size="sm" onClick={() => setShowNewResearch(false)}>
+              <X className="w-4 h-4" />
+            </Button>
+          </div>
+          <div className="p-6">
+            <AIResearchPrompt onSubmit={handleNewResearch} />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   if (selectedCompany) {
     return (
       <div className="flex h-screen">
@@ -299,6 +322,7 @@ export function Dashboard() {
           </div>
           
           <div className="flex-1 overflow-auto">
+            <ResearchResults task={selectedCompany} />
           </div>
         </div>
 
@@ -378,6 +402,8 @@ export function Dashboard() {
 
   return (
     <div className="flex-1 flex flex-col">
+      <NewResearchModal />
+      
       {/* Header */}
       <div className="border-b border-gray-200 bg-white px-6 py-5">
         <div className="flex items-center justify-between">
@@ -450,6 +476,76 @@ export function Dashboard() {
 
         {/* Content Sections */}
         <div className="p-8 space-y-8">
+          {/* Research History */}
+          <section>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-blue-500 rounded-full" />
+                <div>
+                  <h2 className="text-xl font-medium">Research History</h2>
+                  <p className="text-sm text-gray-600">{companies.length} companies analyzed</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Select>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Filter by type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Types</SelectItem>
+                    <SelectItem value="financial">Financial Analysis</SelectItem>
+                    <SelectItem value="market">Market Research</SelectItem>
+                    <SelectItem value="network">Network Analysis</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <Filter className="w-4 h-4" />
+                  Sort By
+                </Button>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {companies.map(company => (
+                <div 
+                  key={company.id} 
+                  className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors"
+                  onClick={() => setSelectedCompany(company)}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-lg font-medium">{company.name}</h3>
+                        <Badge className={getStatusColor(company.status)}>
+                          {company.status === "processing" && <Clock className="w-3 h-3 mr-1" />}
+                          {company.status === "completed" && <CheckCircle className="w-3 h-3 mr-1" />}
+                          {company.status}
+                        </Badge>
+                        <Badge variant="outline" className={getPriorityColor(company.priority)}>
+                          {company.priority}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                        <span>Type: {company.type}</span>
+                        <span>Created: {company.createdAt}</span>
+                        <span>Assignee: {company.assignee}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {company.status === "completed" && (
+                        <Button variant="outline" size="sm">
+                          View Results
+                        </Button>
+                      )}
+                      <Button variant="ghost" size="sm">
+                        <MoreVertical className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Active Research */}
           <section>
             <div className="flex items-center justify-between mb-6">
