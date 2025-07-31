@@ -390,7 +390,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-6 h-full overflow-y-auto">
+        <div className="fixed top-[120px] left-80 right-80 bottom-0 p-6 overflow-y-auto">
           <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-4">
             {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 && (
               <TabsList className="grid w-full grid-cols-3 gap-1 h-auto p-1">
