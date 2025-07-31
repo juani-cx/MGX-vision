@@ -473,8 +473,16 @@ export function Dashboard() {
               </div>
             </CardHeader>
             <CardContent className="p-4">
-              <div className="bg-gray-100 rounded-lg p-3">
-                <p className="text-sm text-gray-700">👋 Ask me about any company or contact</p>
+              <div className="flex gap-2 items-center">
+                <input 
+                  type="text" 
+                  placeholder="👋 Ask me about any company or contact"
+                  className="flex-1 px-3 py-3 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-100"
+                  readOnly
+                />
+                <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-12 px-4 text-sm">
+                  Ask
+                </Button>
               </div>
             </CardContent>
           </Card>

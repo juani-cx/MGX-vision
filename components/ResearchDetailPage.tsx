@@ -931,13 +931,13 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
             {/* Fixed Input at Bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t">
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center">
                 <input 
                   type="text" 
-                  placeholder="Ask me anything about this research..."
-                  className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="👋 Ask me about any company or contact"
+                  className="flex-1 px-3 py-3 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-100"
                 />
-                <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-10 px-4 text-sm">
+                <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-12 px-4 text-sm">
                   Ask
                 </Button>
               </div>

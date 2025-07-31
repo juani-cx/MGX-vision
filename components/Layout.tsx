@@ -102,13 +102,15 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-white/10">
-                <div className="flex items-center gap-3 w-full py-3">
+                <div className="flex items-center gap-3 w-full py-4">
                   <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
                     <span className="text-xs text-black font-medium">AI</span>
                   </div>
                   <div className="flex-1 text-left">
                     <p className="text-sm text-white">AI Assistant</p>
-                    <p className="text-xs text-white/60">Always-On</p>
+                    <div className="mt-1">
+                      <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Always-On</span>
+                    </div>
                   </div>
                   <ChevronDown className="w-4 h-4 text-white/60" />
                 </div>
