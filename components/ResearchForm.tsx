@@ -87,17 +87,17 @@ export function ResearchForm({ onBack, onSubmit, initialData }: ResearchFormProp
   const isValid = formData.companyName && formData.industrySector && formData.researchFocusAreas.length > 0;
 
   return (
-    <div className="flex-1 bg-gray-50">
-      {/* Header */}
-      <div className="bg-gray-100 border-b border-gray-200 px-8 py-6">
+    <div className="flex-1 bg-gray-50 h-screen overflow-hidden">
+      {/* Fixed Header */}
+      <div className="fixed top-20 left-56 right-80 z-30 bg-white border-b border-gray-200 px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-1">
               <button onClick={onBack} className="hover:text-gray-900">Dashboard</button>
               <span>/</span>
               <span className="text-gray-900">{initialData ? "Edit Research Task" : "New Research Task"}</span>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-xl font-bold text-gray-900">
               {initialData ? "Edit Research Task" : "New Research Task"}
             </h1>
             <p className="text-sm text-gray-600 mt-1">
@@ -113,16 +113,20 @@ export function ResearchForm({ onBack, onSubmit, initialData }: ResearchFormProp
               disabled={!isValid}
               className="bg-[#0f1951] hover:bg-[#0f1951]/90 text-white"
             >
-              <Send className="w-4 h-4 mr-2" />
+              <Send className="w-4 h-4 mr-1" />
               Start Research
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Form Content */}
-      <div className="p-8 max-w-4xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-8">
+      {/* Main Layout */}
+      <div className="flex pt-[120px] h-full overflow-hidden">
+        {/* Content wrapper to account for AI assistant */}
+        <div className="flex flex-1 mr-80">
+          {/* Form Content */}
+          <div className="flex-1 p-6 h-full overflow-y-auto">
+            <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
           {/* Basic Information */}
           <Card>
             <CardHeader>
@@ -262,6 +266,162 @@ export function ResearchForm({ onBack, onSubmit, initialData }: ResearchFormProp
             </CardContent>
           </Card>
         </form>
+          </div>
+        </div>
+
+        {/* Fixed AI Assistant Panel */}
+        <div className="fixed top-20 right-0 w-80 h-[calc(100vh-80px)] bg-white border-l border-gray-200 z-10">
+          <div className="flex flex-col h-full">
+            {/* Assistant Header */}
+            <div className="p-4 border-b">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-bold text-blue-600">AI</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm">Research Assistant</h3>
+                  <p className="text-xs text-gray-600">Helping you setup research</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Assistant Content */}
+            <div className="flex-1 p-4 overflow-y-auto pb-20">
+              <div className="space-y-4">
+                {/* Dynamic suggestions based on form state */}
+                {!formData.companyName && (
+                  <div className="bg-blue-50 rounded-lg p-3">
+                    <p className="text-sm text-blue-800 mb-2">
+                      <strong>💡 Getting Started</strong>
+                    </p>
+                    <p className="text-xs text-blue-700">
+                      Start by entering the company name you want to research. I can help suggest relevant focus areas once you provide the company details.
+                    </p>
+                  </div>
+                )}
+
+                {formData.companyName && !formData.industrySector && (
+                  <div className="bg-green-50 rounded-lg p-3">
+                    <p className="text-sm text-green-800 mb-2">
+                      <strong>🏢 Industry Selection</strong>
+                    </p>
+                    <p className="text-xs text-green-700">
+                      Great! Now select the industry sector for {formData.companyName}. This helps me recommend the most relevant research focus areas.
+                    </p>
+                  </div>
+                )}
+
+                {formData.companyName && formData.industrySector && formData.researchFocusAreas.length === 0 && (
+                  <div className="bg-yellow-50 rounded-lg p-3">
+                    <p className="text-sm text-yellow-800 mb-2">
+                      <strong>🎯 Focus Areas</strong>
+                    </p>
+                    <p className="text-xs text-yellow-700">
+                      For {formData.industrySector} companies like {formData.companyName}, I recommend starting with:
+                    </p>
+                    <ul className="text-xs text-yellow-700 mt-2 space-y-1">
+                      <li>• Competitor Benchmarking</li>
+                      <li>• Market Share Data</li>
+                      <li>• Business Model Analysis</li>
+                    </ul>
+                  </div>
+                )}
+
+                {formData.researchFocusAreas.length > 0 && (
+                  <div className="bg-purple-50 rounded-lg p-3">
+                    <p className="text-sm text-purple-800 mb-2">
+                      <strong>📊 Research Scope</strong>
+                    </p>
+                    <p className="text-xs text-purple-700">
+                      Excellent! You've selected {formData.researchFocusAreas.length} focus areas. This will provide comprehensive insights into {formData.companyName}'s market position.
+                    </p>
+                  </div>
+                )}
+
+                {/* Quick Action Buttons */}
+                <div className="space-y-2">
+                  <p className="text-sm text-gray-700 mb-2">Quick Actions:</p>
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {
+                      setFormData(prev => ({
+                        ...prev,
+                        researchFocusAreas: ['competitor-benchmarking', 'market-share-data', 'business-model-analysis']
+                      }));
+                    }}
+                  >
+                    📈 Add Core Analysis
+                  </Button>
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {
+                      setFormData(prev => ({
+                        ...prev,
+                        researchFocusAreas: [...prev.researchFocusAreas, 'product-competitiveness', 'technical-stack']
+                      }));
+                    }}
+                  >
+                    🔧 Add Product Focus
+                  </Button>
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {
+                      setFormData(prev => ({
+                        ...prev,
+                        researchFocusAreas: [...prev.researchFocusAreas, 'funding-activity', 'industry-trends']
+                      }));
+                    }}
+                  >
+                    💰 Add Financial Focus
+                  </Button>
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {
+                      setFormData(prev => ({
+                        ...prev,
+                        priorityLevel: 'high',
+                        additionalNotes: 'Comprehensive competitive analysis requested'
+                      }));
+                    }}
+                  >
+                    ⚡ Set High Priority
+                  </Button>
+                </div>
+
+                {/* Tips */}
+                <div className="border-t pt-3">
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-xs text-gray-600">
+                      <strong>💡 Pro Tip:</strong> Include additional notes about specific questions or competitors you're interested in for more targeted research.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Fixed Input at Bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t">
+              <div className="flex gap-2">
+                <input 
+                  type="text" 
+                  placeholder="Ask about research setup..."
+                  className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-10 px-4 text-sm">
+                  Send
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

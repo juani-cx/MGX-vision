@@ -850,9 +850,10 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
         {/* Fixed AI Assistant Panel */}
         <div className="fixed top-20 right-0 w-80 h-[calc(100vh-80px)] bg-white border-l border-gray-200 z-10">
-          <div className="p-4 h-full overflow-y-auto">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 pb-3 border-b">
+          <div className="flex flex-col h-full">
+            {/* Assistant Header */}
+            <div className="p-4 border-b">
+              <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                   <span className="text-sm font-bold text-blue-600">AI</span>
                 </div>
@@ -861,71 +862,84 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
                   <p className="text-xs text-gray-600">Ready to help with analysis</p>
                 </div>
               </div>
+            </div>
 
-              <div className="space-y-2">
-                <p className="text-sm text-gray-700 mb-2">Quick Actions:</p>
+            {/* Assistant Content */}
+            <div className="flex-1 p-4 overflow-y-auto pb-20">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-sm text-gray-700 mb-2">Quick Actions:</p>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-sm h-8"
-                  onClick={() => {/* Handle summary generation */}}
-                >
-                  📊 Generate Summary
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {/* Handle summary generation */}}
+                  >
+                    📊 Generate Summary
+                  </Button>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-sm h-8"
-                  onClick={() => {/* Handle financial report */}}
-                >
-                  💼 Financial Report
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {/* Handle financial report */}}
+                  >
+                    💼 Financial Report
+                  </Button>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-sm h-8"
-                  onClick={() => {/* Handle competitor analysis */}}
-                >
-                  🏢 Competitor Analysis
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {/* Handle competitor analysis */}}
+                  >
+                    🏢 Competitor Analysis
+                  </Button>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-sm h-8"
-                  onClick={() => {/* Handle market insights */}}
-                >
-                  📈 Market Insights
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {/* Handle market insights */}}
+                  >
+                    📈 Market Insights
+                  </Button>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-sm h-8"
-                  onClick={() => {/* Handle risk assessment */}}
-                >
-                  ⚠️ Risk Assessment
-                </Button>
-              </div>
-
-              <div className="border-t pt-3">
-                <div className="bg-blue-50 rounded-lg p-3">
-                  <p className="text-xs text-blue-800">
-                    💡 <strong>Tip:</strong> Click any action above to get AI-powered insights for this research.
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t pt-3">
-                <p className="text-xs text-gray-500 mb-2">Ask me anything:</p>
-                <div className="flex gap-2">
-                  <input 
-                    type="text" 
-                    placeholder="Type your question..."
-                    className="flex-1 px-2 py-1 text-xs border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                  <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-7 px-3 text-xs">
-                    Ask
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start text-sm h-8"
+                    onClick={() => {/* Handle risk assessment */}}
+                  >
+                    ⚠️ Risk Assessment
                   </Button>
                 </div>
+
+                <div className="border-t pt-3">
+                  <div className="bg-blue-50 rounded-lg p-3">
+                    <p className="text-xs text-blue-800">
+                      💡 <strong>Tip:</strong> Click any action above to get AI-powered insights for this research.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Conversation History would appear here */}
+                <div className="border-t pt-3">
+                  <p className="text-sm text-gray-700 mb-2">Recent Conversations:</p>
+                  <div className="space-y-2">
+                    {/* Future conversation messages will be added here dynamically */}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Fixed Input at Bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t">
+              <div className="flex gap-2">
+                <input 
+                  type="text" 
+                  placeholder="Ask me anything about this research..."
+                  className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-10 px-4 text-sm">
+                  Ask
+                </Button>
               </div>
             </div>
           </div>
