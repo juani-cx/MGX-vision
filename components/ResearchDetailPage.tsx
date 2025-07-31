@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ArrowLeft, Edit, Save, Eye, EyeOff, Plus, Download, Share } from "lucide-react";
 import { Button } from "./ui/button";
@@ -303,17 +304,17 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
   return (
     <div className="flex-1 bg-gray-50 h-screen overflow-hidden">
-      {/* Fixed Header */}
-      <div className="fixed top-20 left-56 right-0 z-30 bg-gray-100 border-b border-gray-200 px-8 py-6">
+      {/* Compact Header */}
+      <div className="fixed top-20 left-56 right-80 z-30 bg-white border-b border-gray-200 px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-1">
               <button onClick={onBack} className="hover:text-gray-900">Dashboard</button>
               <span>/</span>
               <span className="text-gray-900">AI Research</span>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">{researchData.companyName}</h1>
-            <div className="flex items-center gap-3 mt-1">
+            <h1 className="text-xl font-bold text-gray-900">{researchData.companyName}</h1>
+            <div className="flex items-center gap-2 mt-1">
               <span className="text-sm text-gray-600">{researchData.industrySector}</span>
               <Badge className={getStatusColor(researchData.status)}>
                 {researchData.status}
@@ -324,80 +325,80 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline">
-              <Download className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm">
+              <Download className="w-4 h-4 mr-1" />
               Export
             </Button>
-            <Button variant="outline">
-              <Share className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm">
+              <Share className="w-4 h-4 mr-1" />
               Share
             </Button>
-            <Button variant="outline" onClick={onBack}>
-              Cancel
-            </Button>
-            <Button onClick={onEdit} className="bg-[#0f1951] hover:bg-[#0f1951]/90 text-white">
-              <Edit className="w-4 h-4 mr-2" />
+            <Button onClick={onEdit} className="bg-[#0f1951] hover:bg-[#0f1951]/90 text-white" size="sm">
+              <Edit className="w-4 h-4 mr-1" />
               Edit Research
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Content with top margin to account for fixed header */}
-      <div className="flex-1 flex pr-80 pt-[140px] h-full overflow-hidden">
-        {/* Fixed Left Sidebar */}
-        <div className="w-80 bg-white border-r border-gray-200 p-6 h-full overflow-y-auto">
-          <Card className="border-0 shadow-none">
-            <CardHeader className="px-0">
-              <CardTitle className="text-lg">Research Overview</CardTitle>
-            </CardHeader>
-            <CardContent className="px-0 space-y-4">
-                <div>
-                  <p className="text-sm text-gray-600">Assigned To</p>
-                  <p className="font-medium">{researchData.assignedTo}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">Created</p>
-                  <p className="font-medium">{researchData.createdAt}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">Last Updated</p>
-                  <p className="font-medium">{researchData.lastUpdated}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600">Focus Areas</p>
-                  <div className="space-y-1 mt-1">
-                    {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 ? (
-                      researchData.researchFocusAreas.map(area => (
-                        <Badge key={area} variant="secondary" className="text-xs">
-                          {focusAreaLabels[area]}
-                        </Badge>
-                      ))
-                    ) : (
-                      <p className="text-sm text-gray-500">No focus areas defined</p>
-                    )}
-                  </div>
-                </div>
-                {researchData.additionalNotes && (
-                  <div>
-                    <p className="text-sm text-gray-600">Notes</p>
-                    <p className="text-sm mt-1">{researchData.additionalNotes}</p>
-                  </div>
+      {/* Main Layout */}
+      <div className="flex pt-[120px] h-full overflow-hidden">
+        {/* Left Sidebar */}
+        <div className="w-64 bg-white border-r border-gray-200 p-4 h-full overflow-y-auto">
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Research Overview</h3>
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-1">Assigned To</p>
+              <p className="font-medium text-sm">{researchData.assignedTo}</p>
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-1">Created</p>
+              <p className="font-medium text-sm">{researchData.createdAt}</p>
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-1">Last Updated</p>
+              <p className="font-medium text-sm">{researchData.lastUpdated}</p>
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-2">Focus Areas</p>
+              <div className="space-y-1">
+                {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 ? (
+                  researchData.researchFocusAreas.map(area => (
+                    <div key={area} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                      {focusAreaLabels[area]}
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-gray-500">No focus areas defined</p>
                 )}
-              </CardContent>
-          </Card>
+              </div>
+            </div>
+            
+            {researchData.additionalNotes && (
+              <div>
+                <p className="text-sm text-gray-600 mb-1">Notes</p>
+                <p className="text-sm">{researchData.additionalNotes}</p>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Main Content - Full Width with scrolling */}
+        {/* Main Content */}
         <div className="flex-1 p-6 h-full overflow-y-auto">
-          <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-6">
+          <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-4">
             {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 && (
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 gap-2 h-auto p-1">
-                {researchData.researchFocusAreas.slice(0, 6).map(area => (
+              <TabsList className="grid w-full grid-cols-3 gap-1 h-auto p-1">
+                {researchData.researchFocusAreas.slice(0, 3).map(area => (
                   <TabsTrigger
                     key={area}
                     value={area}
-                    className="text-xs px-2 py-2 data-[state=active]:bg-[#0f1951] data-[state=active]:text-white"
+                    className="text-xs px-3 py-2 data-[state=active]:bg-[#0f1951] data-[state=active]:text-white"
                   >
                     {focusAreaLabels[area]}
                   </TabsTrigger>
@@ -405,207 +406,166 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
               </TabsList>
             )}
 
-              {(researchData.researchFocusAreas || []).map(area => {
-                const mockData = mockDataMap[area];
-                if (!mockData) return null;
+            {(researchData.researchFocusAreas || []).map(area => {
+              const mockData = mockDataMap[area];
+              if (!mockData) return null;
 
-                return (
-                  <TabsContent key={area} value={area}>
-                    <Card className="border shadow-none">
-                      <CardHeader>
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <CardTitle>{mockData.title}</CardTitle>
-                            <CardDescription>
-                              AI-generated insights and analysis
-                            </CardDescription>
-                          </div>
-                          <Button variant="outline" size="sm">
-                            <Plus className="w-4 h-4 mr-2" />
-                            Add Section
-                          </Button>
+              return (
+                <TabsContent key={area} value={area}>
+                  <Card className="border shadow-none">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <CardTitle className="text-lg">{mockData.title}</CardTitle>
+                          <CardDescription className="text-sm">
+                            AI-generated insights and analysis
+                          </CardDescription>
                         </div>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="prose max-w-none">
-                          {/* Render specific content based on area type */}
-                          {area === "competitor-benchmarking" && (
-                            <div className="space-y-6">
-                              <div>
-                                <h4 className="font-semibold mb-3">Main Competitors</h4>
-                                <div className="space-y-2">
-                                  {mockData.content.mainCompetitors.map((competitor: any, index: number) => (
-                                    <div key={index} className="border rounded-lg p-3">
-                                      <div className="flex justify-between items-start mb-2">
-                                        <h5 className="font-medium">{competitor.name}</h5>
-                                        <Badge variant="outline">{competitor.marketShare}</Badge>
-                                      </div>
-                                      <p className="text-sm text-gray-600">{competitor.strength}</p>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-
-                              <div>
-                                <h4 className="font-semibold mb-3">Competitive Advantages</h4>
-                                <ul className="space-y-1">
-                                  {mockData.content.competitiveAdvantages.map((advantage: string, index: number) => (
-                                    <li key={index} className="text-sm">• {advantage}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          )}
-
-                          {area === "market-share-data" && (
-                            <div className="space-y-6">
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="text-center p-4 border rounded-lg">
-                                  <div className="text-2xl font-bold text-blue-600">
-                                    {mockData.content.globalEVMarket.teslaShare}
-                                  </div>
-                                  <div className="text-sm text-gray-600">Global EV Market Share</div>
-                                </div>
-                                <div className="text-center p-4 border rounded-lg">
-                                  <div className="text-2xl font-bold text-green-600">
-                                    #{mockData.content.globalEVMarket.rank}
-                                  </div>
-                                  <div className="text-sm text-gray-600">Market Position</div>
-                                </div>
-                                <div className="text-center p-4 border rounded-lg">
-                                  <div className="text-2xl font-bold text-purple-600">
-                                    {mockData.content.globalEVMarket.yearOverYear}
-                                  </div>
-                                  <div className="text-sm text-gray-600">YoY Growth</div>
-                                </div>
-                              </div>
-
-                              <div>
-                                <h4 className="font-semibold mb-3">Regional Breakdown</h4>
-                                <div className="space-y-2">
-                                  {mockData.content.regionalBreakdown.map((region: any, index: number) => (
-                                    <div key={index} className="flex justify-between items-center p-2 border rounded">
-                                      <span>{region.region}</span>
-                                      <div className="flex items-center gap-2">
-                                        <span className="font-medium">{region.share}</span>
-                                        <Badge variant={region.trend === "growing" ? "default" : "secondary"}>
-                                          {region.trend}
-                                        </Badge>
-                                      </div>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Default content structure for other areas */}
-                          {!["competitor-benchmarking", "market-share-data"].includes(area) && (
-                            <div className="space-y-4">
-                              <div className="bg-gray-50 rounded-lg p-4">
-                                <h4 className="font-semibold mb-2">Key Insights</h4>
+                        <Button variant="outline" size="sm">
+                          <Plus className="w-4 h-4 mr-1" />
+                          Add Section
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose max-w-none">
+                        {/* Content sections with similar structure as before but more compact */}
+                        {area === "competitor-benchmarking" && (
+                          <div className="space-y-4">
+                            <div>
+                              <h4 className="font-semibold mb-2 text-sm">Key Insights</h4>
+                              <div className="bg-gray-50 rounded-lg p-3">
                                 <p className="text-sm text-gray-600">
-                                  This section contains AI-generated analysis for {mockData.title.toLowerCase()}. 
+                                  This section contains AI-generated analysis for competitor benchmarking. 
                                   The content will be populated based on research findings and data analysis.
                                 </p>
                               </div>
+                            </div>
 
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="border rounded-lg p-4">
-                                  <h5 className="font-medium mb-2">Primary Data Points</h5>
-                                  <div className="space-y-1 text-sm text-gray-600">
-                                    <div>• Data point 1</div>
-                                    <div>• Data point 2</div>
-                                    <div>• Data point 3</div>
-                                  </div>
-                                </div>
-
-                                <div className="border rounded-lg p-4">
-                                  <h5 className="font-medium mb-2">Analysis Summary</h5>
-                                  <p className="text-sm text-gray-600">
-                                    Comprehensive analysis results will appear here once the AI research is complete.
-                                  </p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="border rounded-lg p-3">
+                                <h5 className="font-medium mb-2 text-sm">Primary Data Points</h5>
+                                <div className="space-y-1 text-xs text-gray-600">
+                                  <div>• Data point 1</div>
+                                  <div>• Data point 2</div>
+                                  <div>• Data point 3</div>
                                 </div>
                               </div>
+
+                              <div className="border rounded-lg p-3">
+                                <h5 className="font-medium mb-2 text-sm">Analysis Summary</h5>
+                                <p className="text-xs text-gray-600">
+                                  Comprehensive analysis results will appear here once the AI research is complete.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Default content for other areas */}
+                        {area !== "competitor-benchmarking" && (
+                          <div className="space-y-4">
+                            <div className="bg-gray-50 rounded-lg p-3">
+                              <h4 className="font-semibold mb-2 text-sm">Key Insights</h4>
+                              <p className="text-sm text-gray-600">
+                                This section contains AI-generated analysis for {mockData.title.toLowerCase()}. 
+                                The content will be populated based on research findings and data analysis.
+                              </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="border rounded-lg p-3">
+                                <h5 className="font-medium mb-2 text-sm">Primary Data Points</h5>
+                                <div className="space-y-1 text-xs text-gray-600">
+                                  <div>• Data point 1</div>
+                                  <div>• Data point 2</div>
+                                  <div>• Data point 3</div>
+                                </div>
+                              </div>
+
+                              <div className="border rounded-lg p-3">
+                                <h5 className="font-medium mb-2 text-sm">Analysis Summary</h5>
+                                <p className="text-xs text-gray-600">
+                                  Comprehensive analysis results will appear here once the AI research is complete.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Editable Notes Section */}
+                        <div className="mt-4 border-t pt-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="font-semibold text-sm">Additional Notes</h4>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => setEditMode(!editMode)}
+                            >
+                              {editMode ? <Eye className="w-4 h-4" /> : <Edit className="w-4 h-4" />}
+                            </Button>
+                          </div>
+                          {editMode ? (
+                            <Textarea
+                              placeholder="Add your notes and observations..."
+                              className="min-h-[80px] text-sm"
+                            />
+                          ) : (
+                            <div className="bg-gray-50 rounded-lg p-3 text-xs text-gray-600">
+                              Click edit to add your notes and observations for this section.
                             </div>
                           )}
-
-                          {/* Editable Notes Section */}
-                          <div className="mt-6 border-t pt-6">
-                            <div className="flex items-center justify-between mb-3">
-                              <h4 className="font-semibold">Additional Notes</h4>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => setEditMode(!editMode)}
-                              >
-                                {editMode ? <Eye className="w-4 h-4" /> : <Edit className="w-4 h-4" />}
-                              </Button>
-                            </div>
-                            {editMode ? (
-                              <Textarea
-                                placeholder="Add your notes and observations..."
-                                className="min-h-[100px]"
-                              />
-                            ) : (
-                              <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
-                                Click edit to add your notes and observations for this section.
-                              </div>
-                            )}
-                          </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  </TabsContent>
-                );
-              })}
-
-              {(!researchData.researchFocusAreas || researchData.researchFocusAreas.length === 0) && (
-                <TabsContent value="overview">
-                  <Card className="border shadow-none">
-                    <CardHeader>
-                      <CardTitle>Research Overview</CardTitle>
-                      <CardDescription>
-                        This research task is still being configured.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="bg-gray-50 rounded-lg p-4">
-                        <p className="text-sm text-gray-600">
-                          No research focus areas have been defined for this task yet. 
-                          Click "Edit Research" to add focus areas and configure the analysis scope.
-                        </p>
                       </div>
                     </CardContent>
                   </Card>
                 </TabsContent>
-              )}
-            </Tabs>
-        </div>
-      </div>
+              );
+            })}
 
-      {/* Fixed AI Assistant Panel */}
-      <div className="fixed top-[200px] right-0 w-80 h-[calc(100vh-200px)] bg-white border-l border-gray-200 z-10">
-        <div className="p-6 h-full overflow-y-auto">
-          <Card className="border-0 shadow-none">
-            <CardHeader className="px-0 pb-4">
-              <div className="flex items-center gap-3">
+            {(!researchData.researchFocusAreas || researchData.researchFocusAreas.length === 0) && (
+              <TabsContent value="overview">
+                <Card className="border shadow-none">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Research Overview</CardTitle>
+                    <CardDescription className="text-sm">
+                      This research task is still being configured.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-gray-50 rounded-lg p-3">
+                      <p className="text-sm text-gray-600">
+                        No research focus areas have been defined for this task yet. 
+                        Click "Edit Research" to add focus areas and configure the analysis scope.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            )}
+          </Tabs>
+        </div>
+
+        {/* Fixed AI Assistant Panel - Full Height */}
+        <div className="fixed top-20 right-0 w-80 h-[calc(100vh-80px)] bg-white border-l border-gray-200 z-10">
+          <div className="p-4 h-full overflow-y-auto">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 pb-3 border-b">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                   <span className="text-sm font-bold text-blue-600">AI</span>
                 </div>
                 <div>
-                  <CardTitle className="text-lg">AI Assistant</CardTitle>
-                  <p className="text-sm text-gray-600">Ready to help with analysis</p>
+                  <h3 className="font-semibold text-sm">AI Assistant</h3>
+                  <p className="text-xs text-gray-600">Ready to help with analysis</p>
                 </div>
               </div>
-            </CardHeader>
-                <CardContent className="px-0 space-y-4">
+
               <div className="space-y-2">
-                <p className="text-sm text-gray-700 mb-3">Quick Actions:</p>
+                <p className="text-sm text-gray-700 mb-2">Quick Actions:</p>
 
                 <Button 
                   variant="outline" 
-                  className="w-full justify-start text-sm h-9"
+                  className="w-full justify-start text-sm h-8"
                   onClick={() => {/* Handle summary generation */}}
                 >
                   📊 Generate Summary
@@ -613,7 +573,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
                 <Button 
                   variant="outline" 
-                  className="w-full justify-start text-sm h-9"
+                  className="w-full justify-start text-sm h-8"
                   onClick={() => {/* Handle financial report */}}
                 >
                   💼 Financial Report
@@ -621,7 +581,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
                 <Button 
                   variant="outline" 
-                  className="w-full justify-start text-sm h-9"
+                  className="w-full justify-start text-sm h-8"
                   onClick={() => {/* Handle competitor analysis */}}
                 >
                   🏢 Competitor Analysis
@@ -629,7 +589,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
                 <Button 
                   variant="outline" 
-                  className="w-full justify-start text-sm h-9"
+                  className="w-full justify-start text-sm h-8"
                   onClick={() => {/* Handle market insights */}}
                 >
                   📈 Market Insights
@@ -637,36 +597,36 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
                 <Button 
                   variant="outline" 
-                  className="w-full justify-start text-sm h-9"
+                  className="w-full justify-start text-sm h-8"
                   onClick={() => {/* Handle risk assessment */}}
                 >
                   ⚠️ Risk Assessment
                 </Button>
               </div>
 
-              <div className="border-t pt-4">
+              <div className="border-t pt-3">
                 <div className="bg-blue-50 rounded-lg p-3">
-                  <p className="text-sm text-blue-800">
+                  <p className="text-xs text-blue-800">
                     💡 <strong>Tip:</strong> Click any action above to get AI-powered insights for this research.
                   </p>
                 </div>
               </div>
 
-              <div className="border-t pt-4">
+              <div className="border-t pt-3">
                 <p className="text-xs text-gray-500 mb-2">Ask me anything:</p>
                 <div className="flex gap-2">
                   <input 
                     type="text" 
                     placeholder="Type your question..."
-                    className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="flex-1 px-2 py-1 text-xs border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
-                  <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90">
+                  <Button size="sm" className="bg-[#0f1951] hover:bg-[#0f1951]/90 h-7 px-3 text-xs">
                     Ask
                   </Button>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
