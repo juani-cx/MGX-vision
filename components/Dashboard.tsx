@@ -610,7 +610,7 @@ export function Dashboard() {
                 </button>
               </div>
             </CardHeader>
-            <CardContent className="p-4">
+            <CardContent className="p-4 pb-0">
               <div className="flex gap-3">
                 <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Brain className="w-4 h-4 text-blue-600" />
