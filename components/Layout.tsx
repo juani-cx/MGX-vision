@@ -98,7 +98,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
         </div>
 
         {/* Bottom Section */}
-        <div className="p-4 border-t border-[#20308e]">
+        <div className="p-2 border-t border-[#20308e]">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-white/10">
@@ -134,7 +134,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
       </div>
 
       {/* Fixed Top Navigation */}
-      <div className="fixed top-0 left-56 right-0 z-20 border-b border-gray-200 bg-white px-6 py-5">
+      <div className="fixed top-0 left-56 right-0 z-20 border-b border-gray-200 bg-white px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-6 flex-1">
             <div className="relative flex-1 max-w-lg">
@@ -179,7 +179,7 @@ export function Layout({ children, currentPage = "dashboard" }: LayoutProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-56 pt-20">
+      <div className="flex-1 flex flex-col ml-56 pt-16">
         {children}
       </div>
     </div>
