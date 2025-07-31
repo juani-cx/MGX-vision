@@ -456,14 +456,14 @@ export function Dashboard() {
 
           {/* AI Assistant Card */}
           <Card className="mt-6 shadow-lg">
-            <CardHeader className="bg-gray-50 border-b">
+            <CardHeader className="bg-gray-50 border-b py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center">
                     <Brain className="w-4 h-4 text-blue-600" />
                   </div>
-                  <div>
-                    <h3 className="font-bold">AI Assistant</h3>
+                  <div className="flex flex-col justify-center">
+                    <h3 className="font-bold leading-none mb-2">AI Assistant</h3>
                     <span className="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Always-On</span>
                   </div>
                 </div>
@@ -472,7 +472,7 @@ export function Dashboard() {
                 </button>
               </div>
             </CardHeader>
-            <CardContent className="p-4">
+            <CardContent className="p-6">
               <div className="flex gap-2 items-center">
                 <input 
                   type="text" 
@@ -599,10 +599,10 @@ export function Dashboard() {
         {/* Floating AI Assistant */}
         <div className="fixed bottom-8 right-8">
           <Card className="w-96 shadow-xl">
-            <CardHeader className="bg-gray-50 border-b">
+            <CardHeader className="bg-gray-50 border-b py-4">
               <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-bold">AI Assistant</h3>
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-bold leading-none mb-1">AI Assistant</h3>
                   <p className="text-sm text-gray-600">Ask me anything</p>
                 </div>
                 <button className="p-2">
