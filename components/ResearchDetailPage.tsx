@@ -343,6 +343,8 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
 
       {/* Main Layout */}
       <div className="flex pt-[120px] h-full overflow-hidden">
+        {/* Content wrapper to account for AI assistant */}
+        <div className="flex flex-1 mr-80">
         {/* Left Sidebar */}
         <div className="w-64 bg-white border-r border-gray-200 p-4 h-full overflow-y-auto">
           <div className="space-y-4">
@@ -390,7 +392,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
         </div>
 
         {/* Main Content */}
-        <div className="fixed top-[120px] left-80 right-80 bottom-0 p-6 overflow-y-auto">
+        <div className="flex-1 p-6 h-full overflow-y-auto">
           <Tabs defaultValue={(researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0) ? researchData.researchFocusAreas[0] : "overview"} className="space-y-4">
             {researchData.researchFocusAreas && researchData.researchFocusAreas.length > 0 && (
               <TabsList className="grid w-full grid-cols-3 gap-1 h-auto p-1">
@@ -544,6 +546,7 @@ export function ResearchDetailPage({ onBack, onEdit, researchData }: ResearchDet
               </TabsContent>
             )}
           </Tabs>
+        </div>
         </div>
 
         {/* Fixed AI Assistant Panel - Full Height */}
