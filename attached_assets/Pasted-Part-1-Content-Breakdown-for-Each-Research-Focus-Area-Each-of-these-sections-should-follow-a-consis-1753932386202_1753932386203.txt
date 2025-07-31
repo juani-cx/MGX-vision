@@ -1,0 +1,148 @@
+Part 1: Content Breakdown for Each Research Focus Area
+Each of these sections should follow a consistent pattern:
+
+Summary insight (1–2 paragraph overview)
+
+Key metrics or benchmarks (table or bullet list)
+
+Sources (URLs, documents, or enrichment logs)
+
+Tags / signals (optional, for filters or recommendations)
+
+Here's the breakdown:
+
+1. Competitor Benchmarking
+Top 3–5 direct competitors
+
+Side-by-side comparison table (products, pricing, positioning, regions)
+
+Strengths/weaknesses analysis
+
+Key differentiators
+
+Last updated/source details
+
+2. Product Competitiveness
+Feature-by-feature comparison to top competitors
+
+Product maturity/stability scores
+
+Innovation drivers (e.g. AI use, UX edge)
+
+Gaps or technical debt indicators
+
+Screenshots or product experience notes
+
+3. Business Model Analysis
+Revenue streams (e.g. licensing, SaaS, hardware, services)
+
+Pricing models (flat, tiered, usage-based)
+
+Margin estimates (if public)
+
+Customer segments served
+
+Go-to-market motion (direct, channel, PLG, etc.)
+
+4. Market Share Data
+Estimated share % vs key competitors
+
+TAM/SAM/SOM if available
+
+Geographic distribution
+
+Revenue or user base growth (trailing 12mo)
+
+Data source annotation
+
+5. Industry Trends and Tailwinds
+Current macro or sector trends
+
+Regulatory factors
+
+Analyst commentary (e.g. Gartner, Pitchbook)
+
+Tech adoption curve / hype cycle position
+
+Market volatility or stability notes
+
+6. Market Sizing and Growth Rates
+TAM/SAM/SOM with sources
+
+CAGR (Compound Annual Growth Rate) over next 3–5 years
+
+Subsegment breakdowns (if applicable)
+
+Growth drivers (technological, regulatory, demographic)
+
+7. Funding Activity
+Total funding to date
+
+Last 3 funding rounds (amount, valuation, lead investor)
+
+Notable investor commentary
+
+Cap table overview (if available)
+
+Burn rate / runway (estimates)
+
+8. Product Deep Dives
+Full product catalog or feature breakdown
+
+User personas served
+
+Use case narratives or case studies
+
+Integrations or ecosystems
+
+Product evolution timeline (if available)
+
+9. Technical Stack Details
+Backend and frontend tech (languages, infra, hosting)
+
+Use of AI/ML models
+
+Data architecture notes (DBs, pipelines, vendors)
+
+DevOps / security practices
+
+Third-party tools & platforms used
+
+📁 Part 2: Tab Structure Proposal
+Yes — you can structure this into tabs, but group related areas to avoid overload. Here's a clear, UX-optimized tab layout:
+
+Suggested Tabs:
+Overview
+
+Summary of the company
+
+Selected focus areas
+
+Research owner, priority, last updated
+
+Market Landscape
+
+Market Share Data
+
+Market Sizing and Growth Rates
+
+Industry Trends and Tailwinds
+
+Competitive Analysis
+
+Competitor Benchmarking
+
+Product Competitiveness
+
+Product Deep Dives
+
+Business Profile
+
+Business Model Analysis
+
+Funding Activity
+
+Technical Profile
+
+Technical Stack Details
+
